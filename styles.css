@@ -1,4 +1,112 @@
-/* styles.css (תוספת לעיצוב) */
+body {
+    font-family: 'Open Sans', sans-serif;
+    direction: rtl;
+    text-align: right;
+    background-color: #000; /* צבע רקע שחור */
+    color: #d4af37; /* צבע טקסט זהב */
+    margin: 0;
+    padding: 0;
+}
+
+header, nav, main, footer {
+    padding: 20px;
+    margin: 10px;
+}
+
+header {
+    background-color: #000; /* צבע רקע שחור */
+    color: #d4af37; /* צבע טקסט זהב */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #d4af37; /* צבע זהב */
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s; /* הוספת אפקט מעבר חלק */
+}
+
+nav ul li a:hover {
+    color: #fff; /* צבע לבן בעת מעבר */
+    animation: breathe 1.5s infinite; /* הנפשת נשימה */
+}
+
+@keyframes breathe {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333; /* צבע רקע כהה */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    color: #d4af37; /* צבע טקסט זהב */
+}
+
+h1, h2, h3 {
+    color: #d4af37; /* צבע כותרות זהב */
+}
+
+.service, .card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    background-color: #444; /* צבע רקע כהה */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    color: #d4af37; /* צבע טקסט זהב */
+}
+
+.service:hover, .card:hover {
+    background-color: #555; /* צבע רקע כהה יותר בעת מעבר */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background-color: #d4af37; /* צבע כפתור זהב */
+    color: #000; /* צבע טקסט שחור */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #b8962e; /* צבע כפתור כהה יותר בעת מעבר */
+}
+
 form label {
     display: block;
     margin-top: 10px;
@@ -20,8 +128,8 @@ form input[type="checkbox"] {
 
 form button {
     margin-top: 10px;
-    background-color: #18bc9c;
-    color: white;
+    background-color: #d4af37;
+    color: #000;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -30,5 +138,19 @@ form button {
 }
 
 form button:hover {
-    background-color: #16a085;
+    background-color: #b8962e;
+}
+
+/* הנפשות */
+.card, .service {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
