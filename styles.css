@@ -31,10 +31,12 @@ header {
 nav ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul li {
-    display: inline;
     margin-right: 20px;
 }
 
