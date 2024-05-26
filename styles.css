@@ -42,13 +42,26 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: white; /* צבע לבן תמידי */
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s; /* הוספת אפקט מעבר חלק */
 }
 
 nav ul li a:hover {
     color: #18bc9c;
+    animation: breathe 1.5s infinite; /* הנפשת נשימה */
+}
+
+@keyframes breathe {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .container {
