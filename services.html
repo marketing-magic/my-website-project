@@ -3,37 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>השירותים שלנו - Marketing Magic</title>
+    <title>שירותים - Marketing Magic</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
+            <img src="logo.png" alt="Marketing Magic Logo" class="logo">
             <h1>Marketing Magic</h1>
             <nav>
-                <a href="index.html">בית</a>
-                <a href="about.html">אודות</a>
-                <a href="services.html">שירותים</a>
-                <a href="contact.html">יצירת קשר</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">בית</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="services.html">שירותים</a></li>
+                    <li><a href="contact.html">יצירת קשר</a></li>
+                </ul>
             </nav>
         </div>
     </header>
     <main>
         <div class="container">
-            <h2>השירותים שלנו</h2>
-            <div class="service">
+            <h2>שירותים</h2>
+            <div class="card">
                 <h3>שירותי SEO</h3>
-                <p>שיפור הדירוג של האתר שלך במנועי חיפוש באמצעות טכניקות SEO מתקדמות. אנחנו מנתחים את מילות המפתח הרלוונטיות, משפרים את התוכן באתר, ומוודאים שהאתר שלך עומד בדרישות הטכניות של מנועי החיפוש. SEO חשוב כי הוא מביא תנועה אורגנית איכותית לאתר שלך, מגביר את האמינות ומוביל להגדלת המכירות.</p>
+                <p>שירותי SEO (אופטימיזציה למנועי חיפוש) מתמקדים בשיפור הנראות של האתר שלך במנועי החיפוש כמו גוגל. אנחנו מנתחים את מילות המפתח הרלוונטיות, משפרים את התוכן באתר, ומוודאים שהאתר שלך עומד בדרישות הטכניות של מנועי החיפוש. SEO חשוב כי הוא מביא תנועה אורגנית איכותית לאתר שלך, מגביר את האמינות ומוביל להגדלת המכירות.</p>
             </div>
-            <div class="service">
+            <div class="card">
                 <h3>ניהול קמפיינים ברשתות חברתיות</h3>
-                <p>ניהול קמפיינים מוצלחים ברשתות חברתיות כולל יצירת תוכן יצירתי ואטרקטיבי, מיקוד לקהל יעד מתאים, ומעקב אחרי הביצועים של הקמפיינים. המטרה היא ליצור מעורבות גבוהה עם הקהל, לבנות קהילה נאמנה, ולהגדיל את החשיפה והמכירות.</p>
+                <p>ניהול קמפיינים ברשתות חברתיות כולל יצירת תוכן יצירתי ואטרקטיבי, מיקוד לקהל יעד מתאים, ומעקב אחרי הביצועים של הקמפיינים. המטרה היא ליצור מעורבות גבוהה עם הקהל, לבנות קהילה נאמנה, ולהגדיל את החשיפה והמכירות.</p>
             </div>
-            <div class="service">
+            <div class="card">
                 <h3>עיצוב אתרים מותאם אישית</h3>
-                <p>עיצוב ופיתוח אתרים מודרניים ומותאמים אישית לצרכים שלך ולתדמית העסקית שלך. אנחנו יוצרים אתרים רספונסיביים, נגישים וידידותיים למשתמש, שמשפרים את חווית המשתמש ומגברים את האמינות של העסק.</p>
+                <p>עיצוב אתרים מותאם אישית כולל תכנון ועיצוב אתר בהתאם לצרכים של העסק שלך. אנחנו יוצרים אתרים מודרניים, נגישים וידידותיים למשתמש, שיתאימו לכל המכשירים (רספונסיביים). העיצוב הייחודי משפר את חווית המשתמש ומגביר את האמינות של העסק.</p>
             </div>
-            <div class="service">
+            <div class="card">
                 <h3>פתרונות CRM מתקדמים</h3>
                 <p>פתרונות CRM (ניהול קשרי לקוחות) מתקדמים מאפשרים לך לנהל ולשפר את התקשורת עם הלקוחות שלך. אנחנו מספקים כלים לארגון מידע על לקוחות, מעקב אחרי תהליכי מכירה, ושיפור השירות והחוויות של הלקוחות.</p>
             </div>
@@ -44,6 +48,19 @@
             <p>כל הזכויות שמורות © Marketing Magic</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener("mousemove", function(e) {
+            for (let i = 0; i < 5; i++) {
+                let sparkle = document.createElement("div");
+                sparkle.className = "sparkle";
+                sparkle.style.left = `${e.pageX + Math.random() * 20 - 10}px`;
+                sparkle.style.top = `${e.pageY + Math.random() * 20 - 10}px`;
+                sparkle.style.setProperty("--i", i);
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        });
+    </script>
 </body>
 </html>
 

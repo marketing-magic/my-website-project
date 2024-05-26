@@ -26,18 +26,18 @@
         <div class="container">
             <h2>יצירת קשר</h2>
             <form action="https://formspree.io/f/mleqkaqr" method="POST">
-                <label for="name">שם מלא</label>
+                <label for="name">שם מלא:</label>
                 <input type="text" id="name" name="name" required>
                 
-                <label for="email">אימייל</label>
+                <label for="email">אימייל:</label>
                 <input type="email" id="email" name="email" required>
                 
-                <label for="message">הודעה</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <label for="subscribe">
+                <label for="message">הודעה:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <label>
                     <input type="checkbox" id="subscribe" name="subscribe" required>
-                    אני מאשר/ת קבלת דיוור
+                    אני מאשר/ת דיוור
                 </label>
                 
                 <button type="submit">שלח</button>
@@ -49,5 +49,18 @@
             <p>כל הזכויות שמורות © Marketing Magic</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener("mousemove", function(e) {
+            for (let i = 0; i < 5; i++) {
+                let sparkle = document.createElement("div");
+                sparkle.className = "sparkle";
+                sparkle.style.left = `${e.pageX + Math.random() * 20 - 10}px`;
+                sparkle.style.top = `${e.pageY + Math.random() * 20 - 10}px`;
+                sparkle.style.setProperty("--i", i);
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        });
+    </script>
 </body>
 </html>

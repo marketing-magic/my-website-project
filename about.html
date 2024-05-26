@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>אודות - Marketing Magic</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
+            <img src="logo.png" alt="Marketing Magic Logo" class="logo">
             <h1>Marketing Magic</h1>
             <nav>
-                <a href="index.html">בית</a>
-                <a href="about.html">אודות</a>
-                <a href="services.html">שירותים</a>
-                <a href="contact.html">יצירת קשר</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">בית</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="services.html">שירותים</a></li>
+                    <li><a href="contact.html">יצירת קשר</a></li>
+                </ul>
             </nav>
         </div>
     </header>
     <main>
         <div class="container">
-            <h2>אודות Marketing Magic</h2>
-            <p>Marketing Magic היא חברה מובילה בשיווק דיגיטלי המציעה פתרונות מותאמים אישית לעסקים קטנים ובינוניים. אנו מחויבים להביא לך תוצאות ולהוביל את העסק שלך להצלחה.</p>
-            <h3>עליי</h3>
-            <p>נוי , מייסדת החברה, בעלת ניסיון רב בשיווק דיגיטלי, ניהול קמפיינים ברשתות חברתיות, עיצוב אתרים ופתרונות CRM. עם ניסיון וידע נרחבים, אני כאן כדי לספק לך את הכלים והאסטרטגיות הדרושים להצלחת העסק שלך.</p>
+            <h2>אודות</h2>
+            <p>Marketing Magic היא חברת שיווק דיגיטלי המובילה במתן פתרונות מתקדמים לעסקים קטנים ובינוניים. המטרה שלנו היא לעזור לעסקים לצמוח ולהגיע ללקוחות חדשים באמצעות כלים שיווקיים חדשניים ומתקדמים.</p>
         </div>
     </main>
     <footer>
@@ -31,5 +33,19 @@
             <p>כל הזכויות שמורות © Marketing Magic</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener("mousemove", function(e) {
+            for (let i = 0; i < 5; i++) {
+                let sparkle = document.createElement("div");
+                sparkle.className = "sparkle";
+                sparkle.style.left = `${e.pageX + Math.random() * 20 - 10}px`;
+                sparkle.style.top = `${e.pageY + Math.random() * 20 - 10}px`;
+                sparkle.style.setProperty("--i", i);
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        });
+    </script>
 </body>
 </html>
+
