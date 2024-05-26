@@ -113,13 +113,20 @@ form label {
     margin-top: 10px;
 }
 
+/* עיצוב שדות טופס */
 form input, form textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid gold; /* גבול זהב */
     border-radius: 5px;
+    background-color: #333; /* צבע רקע אפור */
+    color: gold; /* צבע טקסט זהב */
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: gold; /* צבע טקסט זהב בתוך השדות */
 }
 
 form input[type="checkbox"] {
