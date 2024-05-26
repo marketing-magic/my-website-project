@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     direction: rtl;
     text-align: right;
-    background-color: #f0f8ff; /* צבע רקע לאתר */
+    background-color: #f0f8ff;
     color: #333;
     margin: 0;
     padding: 0;
@@ -21,7 +21,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #18bc9c; /* צבע בעת מעבר העכבר */
+    color: #18bc9c;
 }
 
 .container {
@@ -44,3 +44,4 @@ h2 {
 p {
     line-height: 1.6;
 }
+
