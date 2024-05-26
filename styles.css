@@ -2,16 +2,45 @@ body {
     font-family: Arial, sans-serif;
     direction: rtl;
     text-align: right;
+    background-color: #f0f8ff; /* צבע רקע לאתר */
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
+
 header, nav, main, footer {
     padding: 20px;
     margin: 10px;
 }
+
 nav a {
     margin: 0 10px;
     text-decoration: none;
+    color: #2c3e50;
+    font-weight: bold;
 }
+
+nav a:hover {
+    color: #18bc9c; /* צבע בעת מעבר העכבר */
+}
+
 .container {
     max-width: 800px;
     margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+h2 {
+    color: #2c3e50;
+}
+
+p {
+    line-height: 1.6;
 }
