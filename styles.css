@@ -16,60 +16,51 @@ header, nav, main, footer {
 nav a {
     margin: 0 10px;
     text-decoration: none;
-    color: #2c3e50;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #18bc9c;
+    color: #333;
 }
 
 .container {
     max-width: 800px;
-    margin: auto;
+    margin: 0 auto;
     padding: 20px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    color: #2c3e50;
-    text-align: center;
+h1, h2, h3 {
+    color: #0066cc;
 }
 
-h2 {
-    color: #2c3e50;
+.service, .card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #e6f7ff;
 }
 
-p {
-    line-height: 1.6;
-}
-
-/* כפתורים */
 button {
-    background-color: #18bc9c;
+    background-color: #0066cc;
     color: white;
     border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 2px;
-    cursor: pointer;
+    padding: 10px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #149174;
+    background-color: #004c99;
 }
 
-/* כרטיסים */
-.card {
-    background-color: white;
-    padding: 20px;
-    margin: 20px 0;
+form label, form input, form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
