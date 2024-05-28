@@ -38,6 +38,100 @@
                 <h3>שירותי SEO</h3>
                 <p>שירותי SEO (אופטימיזציה למנועי חיפוש) מתמקדים בשיפור הנראות של האתר שלך במנועי החיפוש כמו גוגל. אנחנו מנתחים את מילות המפתח הרלוונטיות, משפרים את התוכן באתר, ומוודאים שהאתר שלך עומד בדרישות הטכניות של מנועי החיפוש. SEO חשוב כי הוא מביא תנועה אורגנית איכותית לאתר שלך, מגביר את האמינות ומוביל להגדלת המכירות.</p>
                 <button>למידע נוסף</button>
+                <div id='crmWebToEntityForm' class='zcwf_lblLeft zcwf_rtl crmWebToEntityForm' style='background-color: white;color: black;max-width: 600px;'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <META HTTP-EQUIV ='content-type' CONTENT='text/html;charset=UTF-8'>
+                    <form id='webform6262983000000593187' action='https://crm.zoho.com/crm/WebToLeadForm' name='WebToLeads6262983000000593187' method='POST' onSubmit='return validateForm()' accept-charset='UTF-8'>
+                        <input type='text' style='display:none;' name='xnQsjsdp' value='3690cfa9dc2561c512d05a97662499b060d2f4250f8ae4c85706e200c9ad786d'></input>
+                        <input type='hidden' name='zc_gad' id='zc_gad' value=''></input>
+                        <input type='text' style='display:none;' name='xmIwtLD' value='db7bbd0874bc374c51f52d22829a032445cad8a86f15593e27fc6de53d8941bed40511c7e80d7562f445665017e499ab'></input>
+                        <input type='text'  style='display:none;' name='actionType' value='TGVhZHM='></input>
+                        <input type='text' style='display:none;' name='returnURL' value='null' > </input>
+                        <!-- Do not remove this code. -->
+                        <div class='zcwf_title' style='max-width: 600px;color: black; font-family:Arial;'>למידע נוסף ושליחת ייעוץ חינם</div>
+                        <div class='zcwf_row'>
+                            <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Company'>חברה<span style='color:red;'>*</span></label></div>
+                            <div class='zcwf_col_fld'><input type='text' id='Company' name='Company' maxlength='200' required></input><div class='zcwf_col_help'></div></div>
+                        </div>
+                        <div class='zcwf_row'>
+                            <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='First_Name'>שם פרטי<span style='color:red;'>*</span></label></div>
+                            <div class='zcwf_col_fld'><input type='text' id='First_Name' name='First Name' maxlength='40' required></input><div class='zcwf_col_help'></div></div>
+                        </div>
+                        <div class='zcwf_row'>
+                            <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Last_Name'>שם משפחה<span style='color:red;'>*</span></label></div>
+                            <div class='zcwf_col_fld'><input type='text' id='Last_Name' name='Last Name' maxlength='80' required></input><div class='zcwf_col_help'></div></div>
+                        </div>
+                        <div class='zcwf_row'>
+                            <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Email'>דוא״ל<span style='color:red;'>*</span></label></div>
+                            <div class='zcwf_col_fld'><input type='email' id='Email' name='Email' crmlabel='' maxlength='100' required></input><div class='zcwf_col_help'></div></div>
+                        </div>
+                        <div class='zcwf_row'>
+                            <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Phone'>טלפון<span style='color:red;'>*</span></label></div>
+                            <div class='zcwf_col_fld'><input type='text' id='Phone' name='Phone' maxlength='30' required></input><div class='zcwf_col_help'></div></div>
+                        </div>
+                        <div class='zcwf_row'>
+                            <div class='zcwf_col_lab'></div>
+                            <div class='zcwf_col_fld'>
+                                <input type='submit' id='formsubmit' class='formsubmit zcwf_button' value='שליחה לייעוץ חינם!' title='שליחה לייעוץ חינם!'>
+                                <input type='reset' class='zcwf_button' name='reset' value='מילוי מחדש' title='מילוי מחדש'>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <script>
+                function validateForm() {
+                    var form = document.forms['WebToLeads6262983000000593187'];
+                    var fields = ['Company', 'First Name', 'Last Name', 'Email', 'Phone'];
+                    for (var i = 0; i < fields.length; i++) {
+                        var field = form[fields[i]];
+                        if (!field.value || field.value.trim() === '') {
+                            alert('אנא מלא את כל השדות המסומנים ב-*');
+                            field.focus();
+                            return false;
+                        }
+                    }
+                    if (!validateEmail6262983000000593187()) {
+                        return false;
+                    }
+                    document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+                    return true;
+                }
+                
+                function validateEmail6262983000000593187() {
+                    var form = document.forms['WebToLeads6262983000000593187'];
+                    var emailFld = form.querySelectorAll('[ftype=email]');
+                    var i;
+                    for (i = 0; i < emailFld.length; i++) {
+                        var emailVal = emailFld[i].value;
+                        if ((emailVal.replace(/^\s+|\s+$/g, '')).length != 0) {
+                            var atpos = emailVal.indexOf('@');
+                            var dotpos = emailVal.lastIndexOf('.');
+                            if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+                                alert('אנא הזן כתובת דוא״ל חוקית. ');
+                                emailFld[i].focus();
+                                return false;
+                            }
+                        }
+                    }
+                    return true;
+                }
+                
+                function tooltipShow6262983000000593187(el) {
+                    var tooltip = el.nextElementSibling;
+                    var tooltipDisplay = tooltip.style.display;
+                    if (tooltipDisplay == 'none') {
+                        var allTooltip = document.getElementsByClassName('zcwf_tooltip_over');
+                        for (i = 0; i < allTooltip.length; i++) {
+                            allTooltip[i].style.display = 'none';
+                        }
+                        tooltip.style.display = 'block';
+                    } else {
+                        tooltip.style.display = 'none';
+                    }
+                }
+                </script>
+                <!-- Do not remove this --- Analytics Tracking code starts --><script id='wf_anal' src='https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=a7696c6f7da7bed324759319d9aa9f3468c0483c103dc27d7eb7193f0dc0597e'></script><!-- Do not remove this --- Analytics Tracking code ends. -->
+                
                 <div class="card">
                     <h3>שירותי SEO</h3>
                     <p>שירותי SEO (אופטימיזציה למנועי חיפוש) מתמקדים בשיפור הנראות של האתר שלך במנועי החיפוש כמו גוגל. אנחנו מנתחים את מילות המפתח הרלוונטיות, משפרים את התוכן באתר, ומוודאים שהאתר שלך עומד בדרישות הטכניות של מנועי החיפוש. SEO חשוב כי הוא מביא תנועה אורגנית איכותית לאתר שלך, מגביר את האמינות ומוביל להגדלת המכירות.</p>
@@ -46,33 +140,33 @@
                     <div id='crmWebToEntityForm' class='zcwf_lblLeft zcwf_rtl crmWebToEntityForm' style='background-color: white;color: black;max-width: 600px;'>
                         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
                         <META HTTP-EQUIV ='content-type' CONTENT='text/html;charset=UTF-8'>
-                        <form id='webform6262983000000593187' action='https://crm.zoho.com/crm/WebToLeadForm' name='WebToLeads6262983000000593187' method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory6262983000000593187()' accept-charset='UTF-8'>
-                            <input type='text' style='display:none;' name='xnQsjsdp' value='96e1eda2a714d759cd4e63c18aa92c08b27cc94ac6480cbe9e23a2d60ee541da'></input> 
+                        <form id='webform6262983000000593187' action='https://crm.zoho.com/crm/WebToLeadForm' name='WebToLeads6262983000000593187' method='POST' onSubmit='return validateForm()' accept-charset='UTF-8'>
+                            <input type='text' style='display:none;' name='xnQsjsdp' value='3690cfa9dc2561c512d05a97662499b060d2f4250f8ae4c85706e200c9ad786d'></input>
                             <input type='hidden' name='zc_gad' id='zc_gad' value=''></input>
-                            <input type='text' style='display:none;' name='xmIwtLD' value='7ba01b4cf714c51f3e2e174f31cf370b4638f3a2b902233899ce0b4ad77e7cf5ea18181c0957fd0b63feb2683706bf47'></input> 
+                            <input type='text' style='display:none;' name='xmIwtLD' value='db7bbd0874bc374c51f52d22829a032445cad8a86f15593e27fc6de53d8941bed40511c7e80d7562f445665017e499ab'></input>
                             <input type='text'  style='display:none;' name='actionType' value='TGVhZHM='></input>
                             <input type='text' style='display:none;' name='returnURL' value='null' > </input>
                             <!-- Do not remove this code. -->
-                            <div class='zcwf_title' style='max-width: 600px;color: black; font-family:Arial;'>אתר אינטרנט marketing magic - html</div>
+                            <div class='zcwf_title' style='max-width: 600px;color: black; font-family:Arial;'>למידע נוסף ושליחת ייעוץ חינם</div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Company'>חברה<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='Company' name='Company' maxlength='200'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='Company' name='Company' maxlength='200' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='First_Name'>שם פרטי<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='First_Name' name='First Name' maxlength='40'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='First_Name' name='First Name' maxlength='40' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Last_Name'>שם משפחה<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='Last_Name' name='Last Name' maxlength='80'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='Last_Name' name='Last Name' maxlength='80' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Email'>דוא״ל<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' ftype='email' autocomplete='false' id='Email' name='Email' crmlabel='' maxlength='100'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='email' id='Email' name='Email' crmlabel='' maxlength='100' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Phone'>טלפון<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='Phone' name='Phone' maxlength='30'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='Phone' name='Phone' maxlength='30' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab'></div>
@@ -83,6 +177,60 @@
                             </div>
                         </form>
                     </div>
+                    <script>
+                    function validateForm() {
+                        var form = document.forms['WebToLeads6262983000000593187'];
+                        var fields = ['Company', 'First Name', 'Last Name', 'Email', 'Phone'];
+                        for (var i = 0; i < fields.length; i++) {
+                            var field = form[fields[i]];
+                            if (!field.value || field.value.trim() === '') {
+                                alert('אנא מלא את כל השדות המסומנים ב-*');
+                                field.focus();
+                                return false;
+                            }
+                        }
+                        if (!validateEmail6262983000000593187()) {
+                            return false;
+                        }
+                        document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+                        return true;
+                    }
+                    
+                    function validateEmail6262983000000593187() {
+                        var form = document.forms['WebToLeads6262983000000593187'];
+                        var emailFld = form.querySelectorAll('[ftype=email]');
+                        var i;
+                        for (i = 0; i < emailFld.length; i++) {
+                            var emailVal = emailFld[i].value;
+                            if ((emailVal.replace(/^\s+|\s+$/g, '')).length != 0) {
+                                var atpos = emailVal.indexOf('@');
+                                var dotpos = emailVal.lastIndexOf('.');
+                                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+                                    alert('אנא הזן כתובת דוא״ל חוקית. ');
+                                    emailFld[i].focus();
+                                    return false;
+                                }
+                            }
+                        }
+                        return true;
+                    }
+                    
+                    function tooltipShow6262983000000593187(el) {
+                        var tooltip = el.nextElementSibling;
+                        var tooltipDisplay = tooltip.style.display;
+                        if (tooltipDisplay == 'none') {
+                            var allTooltip = document.getElementsByClassName('zcwf_tooltip_over');
+                            for (i = 0; i < allTooltip.length; i++) {
+                                allTooltip[i].style.display = 'none';
+                            }
+                            tooltip.style.display = 'block';
+                        } else {
+                            tooltip.style.display = 'none';
+                        }
+                    }
+                    </script>
+                    <!-- Do not remove this --- Analytics Tracking code starts --><script id='wf_anal' src='https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=a7696c6f7da7bed324759319d9aa9f3468c0483c103dc27d7eb7193f0dc0597e'></script><!-- Do not remove this --- Analytics Tracking code ends. -->
+                    
                     <!-- סיום הטופס -->
             </div>
             <div class="card">
@@ -97,33 +245,33 @@
                     <div id='crmWebToEntityForm' class='zcwf_lblLeft zcwf_rtl crmWebToEntityForm' style='background-color: white;color: black;max-width: 600px;'>
                         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
                         <META HTTP-EQUIV ='content-type' CONTENT='text/html;charset=UTF-8'>
-                        <form id='webform6262983000000593187' action='https://crm.zoho.com/crm/WebToLeadForm' name='WebToLeads6262983000000593187' method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory6262983000000593187()' accept-charset='UTF-8'>
-                            <input type='text' style='display:none;' name='xnQsjsdp' value='96e1eda2a714d759cd4e63c18aa92c08b27cc94ac6480cbe9e23a2d60ee541da'></input> 
+                        <form id='webform6262983000000593187' action='https://crm.zoho.com/crm/WebToLeadForm' name='WebToLeads6262983000000593187' method='POST' onSubmit='return validateForm()' accept-charset='UTF-8'>
+                            <input type='text' style='display:none;' name='xnQsjsdp' value='3690cfa9dc2561c512d05a97662499b060d2f4250f8ae4c85706e200c9ad786d'></input>
                             <input type='hidden' name='zc_gad' id='zc_gad' value=''></input>
-                            <input type='text' style='display:none;' name='xmIwtLD' value='7ba01b4cf714c51f3e2e174f31cf370b4638f3a2b902233899ce0b4ad77e7cf5ea18181c0957fd0b63feb2683706bf47'></input> 
+                            <input type='text' style='display:none;' name='xmIwtLD' value='db7bbd0874bc374c51f52d22829a032445cad8a86f15593e27fc6de53d8941bed40511c7e80d7562f445665017e499ab'></input>
                             <input type='text'  style='display:none;' name='actionType' value='TGVhZHM='></input>
                             <input type='text' style='display:none;' name='returnURL' value='null' > </input>
                             <!-- Do not remove this code. -->
-                            <div class='zcwf_title' style='max-width: 600px;color: black; font-family:Arial;'>אתר אינטרנט marketing magic - html</div>
+                            <div class='zcwf_title' style='max-width: 600px;color: black; font-family:Arial;'>למידע נוסף ושליחת ייעוץ חינם</div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Company'>חברה<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='Company' name='Company' maxlength='200'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='Company' name='Company' maxlength='200' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='First_Name'>שם פרטי<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='First_Name' name='First Name' maxlength='40'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='First_Name' name='First Name' maxlength='40' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Last_Name'>שם משפחה<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='Last_Name' name='Last Name' maxlength='80'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='Last_Name' name='Last Name' maxlength='80' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Email'>דוא״ל<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' ftype='email' autocomplete='false' id='Email' name='Email' crmlabel='' maxlength='100'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='email' id='Email' name='Email' crmlabel='' maxlength='100' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Phone'>טלפון<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='Phone' name='Phone' maxlength='30'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='Phone' name='Phone' maxlength='30' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab'></div>
@@ -134,6 +282,60 @@
                             </div>
                         </form>
                     </div>
+                    <script>
+                    function validateForm() {
+                        var form = document.forms['WebToLeads6262983000000593187'];
+                        var fields = ['Company', 'First Name', 'Last Name', 'Email', 'Phone'];
+                        for (var i = 0; i < fields.length; i++) {
+                            var field = form[fields[i]];
+                            if (!field.value || field.value.trim() === '') {
+                                alert('אנא מלא את כל השדות המסומנים ב-*');
+                                field.focus();
+                                return false;
+                            }
+                        }
+                        if (!validateEmail6262983000000593187()) {
+                            return false;
+                        }
+                        document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+                        return true;
+                    }
+                    
+                    function validateEmail6262983000000593187() {
+                        var form = document.forms['WebToLeads6262983000000593187'];
+                        var emailFld = form.querySelectorAll('[ftype=email]');
+                        var i;
+                        for (i = 0; i < emailFld.length; i++) {
+                            var emailVal = emailFld[i].value;
+                            if ((emailVal.replace(/^\s+|\s+$/g, '')).length != 0) {
+                                var atpos = emailVal.indexOf('@');
+                                var dotpos = emailVal.lastIndexOf('.');
+                                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+                                    alert('אנא הזן כתובת דוא״ל חוקית. ');
+                                    emailFld[i].focus();
+                                    return false;
+                                }
+                            }
+                        }
+                        return true;
+                    }
+                    
+                    function tooltipShow6262983000000593187(el) {
+                        var tooltip = el.nextElementSibling;
+                        var tooltipDisplay = tooltip.style.display;
+                        if (tooltipDisplay == 'none') {
+                            var allTooltip = document.getElementsByClassName('zcwf_tooltip_over');
+                            for (i = 0; i < allTooltip.length; i++) {
+                                allTooltip[i].style.display = 'none';
+                            }
+                            tooltip.style.display = 'block';
+                        } else {
+                            tooltip.style.display = 'none';
+                        }
+                    }
+                    </script>
+                    <!-- Do not remove this --- Analytics Tracking code starts --><script id='wf_anal' src='https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=a7696c6f7da7bed324759319d9aa9f3468c0483c103dc27d7eb7193f0dc0597e'></script><!-- Do not remove this --- Analytics Tracking code ends. -->
+                    
                     <!-- סיום הטופס -->
             </div>
             <div class="card">
@@ -148,33 +350,33 @@
                     <div id='crmWebToEntityForm' class='zcwf_lblLeft zcwf_rtl crmWebToEntityForm' style='background-color: white;color: black;max-width: 600px;'>
                         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
                         <META HTTP-EQUIV ='content-type' CONTENT='text/html;charset=UTF-8'>
-                        <form id='webform6262983000000593187' action='https://crm.zoho.com/crm/WebToLeadForm' name='WebToLeads6262983000000593187' method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory6262983000000593187()' accept-charset='UTF-8'>
-                            <input type='text' style='display:none;' name='xnQsjsdp' value='96e1eda2a714d759cd4e63c18aa92c08b27cc94ac6480cbe9e23a2d60ee541da'></input> 
+                        <form id='webform6262983000000593187' action='https://crm.zoho.com/crm/WebToLeadForm' name='WebToLeads6262983000000593187' method='POST' onSubmit='return validateForm()' accept-charset='UTF-8'>
+                            <input type='text' style='display:none;' name='xnQsjsdp' value='3690cfa9dc2561c512d05a97662499b060d2f4250f8ae4c85706e200c9ad786d'></input>
                             <input type='hidden' name='zc_gad' id='zc_gad' value=''></input>
-                            <input type='text' style='display:none;' name='xmIwtLD' value='7ba01b4cf714c51f3e2e174f31cf370b4638f3a2b902233899ce0b4ad77e7cf5ea18181c0957fd0b63feb2683706bf47'></input> 
+                            <input type='text' style='display:none;' name='xmIwtLD' value='db7bbd0874bc374c51f52d22829a032445cad8a86f15593e27fc6de53d8941bed40511c7e80d7562f445665017e499ab'></input>
                             <input type='text'  style='display:none;' name='actionType' value='TGVhZHM='></input>
                             <input type='text' style='display:none;' name='returnURL' value='null' > </input>
                             <!-- Do not remove this code. -->
-                            <div class='zcwf_title' style='max-width: 600px;color: black; font-family:Arial;'>אתר אינטרנט marketing magic - html</div>
+                            <div class='zcwf_title' style='max-width: 600px;color: black; font-family:Arial;'>למידע נוסף ושליחת ייעוץ חינם</div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Company'>חברה<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='Company' name='Company' maxlength='200'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='Company' name='Company' maxlength='200' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='First_Name'>שם פרטי<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='First_Name' name='First Name' maxlength='40'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='First_Name' name='First Name' maxlength='40' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Last_Name'>שם משפחה<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='Last_Name' name='Last Name' maxlength='80'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='Last_Name' name='Last Name' maxlength='80' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Email'>דוא״ל<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' ftype='email' autocomplete='false' id='Email' name='Email' crmlabel='' maxlength='100'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='email' id='Email' name='Email' crmlabel='' maxlength='100' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Phone'>טלפון<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='Phone' name='Phone' maxlength='30'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='Phone' name='Phone' maxlength='30' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab'></div>
@@ -185,6 +387,60 @@
                             </div>
                         </form>
                     </div>
+                    <script>
+                    function validateForm() {
+                        var form = document.forms['WebToLeads6262983000000593187'];
+                        var fields = ['Company', 'First Name', 'Last Name', 'Email', 'Phone'];
+                        for (var i = 0; i < fields.length; i++) {
+                            var field = form[fields[i]];
+                            if (!field.value || field.value.trim() === '') {
+                                alert('אנא מלא את כל השדות המסומנים ב-*');
+                                field.focus();
+                                return false;
+                            }
+                        }
+                        if (!validateEmail6262983000000593187()) {
+                            return false;
+                        }
+                        document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+                        return true;
+                    }
+                    
+                    function validateEmail6262983000000593187() {
+                        var form = document.forms['WebToLeads6262983000000593187'];
+                        var emailFld = form.querySelectorAll('[ftype=email]');
+                        var i;
+                        for (i = 0; i < emailFld.length; i++) {
+                            var emailVal = emailFld[i].value;
+                            if ((emailVal.replace(/^\s+|\s+$/g, '')).length != 0) {
+                                var atpos = emailVal.indexOf('@');
+                                var dotpos = emailVal.lastIndexOf('.');
+                                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+                                    alert('אנא הזן כתובת דוא״ל חוקית. ');
+                                    emailFld[i].focus();
+                                    return false;
+                                }
+                            }
+                        }
+                        return true;
+                    }
+                    
+                    function tooltipShow6262983000000593187(el) {
+                        var tooltip = el.nextElementSibling;
+                        var tooltipDisplay = tooltip.style.display;
+                        if (tooltipDisplay == 'none') {
+                            var allTooltip = document.getElementsByClassName('zcwf_tooltip_over');
+                            for (i = 0; i < allTooltip.length; i++) {
+                                allTooltip[i].style.display = 'none';
+                            }
+                            tooltip.style.display = 'block';
+                        } else {
+                            tooltip.style.display = 'none';
+                        }
+                    }
+                    </script>
+                    <!-- Do not remove this --- Analytics Tracking code starts --><script id='wf_anal' src='https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=a7696c6f7da7bed324759319d9aa9f3468c0483c103dc27d7eb7193f0dc0597e'></script><!-- Do not remove this --- Analytics Tracking code ends. -->
+                    
                     <!-- סיום הטופס -->
                         </div>
                     </form>
@@ -203,33 +459,33 @@
                     <div id='crmWebToEntityForm' class='zcwf_lblLeft zcwf_rtl crmWebToEntityForm' style='background-color: white;color: black;max-width: 600px;'>
                         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
                         <META HTTP-EQUIV ='content-type' CONTENT='text/html;charset=UTF-8'>
-                        <form id='webform6262983000000593187' action='https://crm.zoho.com/crm/WebToLeadForm' name='WebToLeads6262983000000593187' method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory6262983000000593187()' accept-charset='UTF-8'>
-                            <input type='text' style='display:none;' name='xnQsjsdp' value='96e1eda2a714d759cd4e63c18aa92c08b27cc94ac6480cbe9e23a2d60ee541da'></input> 
+                        <form id='webform6262983000000593187' action='https://crm.zoho.com/crm/WebToLeadForm' name='WebToLeads6262983000000593187' method='POST' onSubmit='return validateForm()' accept-charset='UTF-8'>
+                            <input type='text' style='display:none;' name='xnQsjsdp' value='3690cfa9dc2561c512d05a97662499b060d2f4250f8ae4c85706e200c9ad786d'></input>
                             <input type='hidden' name='zc_gad' id='zc_gad' value=''></input>
-                            <input type='text' style='display:none;' name='xmIwtLD' value='7ba01b4cf714c51f3e2e174f31cf370b4638f3a2b902233899ce0b4ad77e7cf5ea18181c0957fd0b63feb2683706bf47'></input> 
+                            <input type='text' style='display:none;' name='xmIwtLD' value='db7bbd0874bc374c51f52d22829a032445cad8a86f15593e27fc6de53d8941bed40511c7e80d7562f445665017e499ab'></input>
                             <input type='text'  style='display:none;' name='actionType' value='TGVhZHM='></input>
                             <input type='text' style='display:none;' name='returnURL' value='null' > </input>
                             <!-- Do not remove this code. -->
-                            <div class='zcwf_title' style='max-width: 600px;color: black; font-family:Arial;'>אתר אינטרנט marketing magic - html</div>
+                            <div class='zcwf_title' style='max-width: 600px;color: black; font-family:Arial;'>למידע נוסף ושליחת ייעוץ חינם</div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Company'>חברה<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='Company' name='Company' maxlength='200'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='Company' name='Company' maxlength='200' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='First_Name'>שם פרטי<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='First_Name' name='First Name' maxlength='40'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='First_Name' name='First Name' maxlength='40' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Last_Name'>שם משפחה<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='Last_Name' name='Last Name' maxlength='80'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='Last_Name' name='Last Name' maxlength='80' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Email'>דוא״ל<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' ftype='email' autocomplete='false' id='Email' name='Email' crmlabel='' maxlength='100'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='email' id='Email' name='Email' crmlabel='' maxlength='100' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Phone'>טלפון<span style='color:red;'>*</span></label></div>
-                                <div class='zcwf_col_fld'><input type='text' id='Phone' name='Phone' maxlength='30'></input><div class='zcwf_col_help'></div></div>
+                                <div class='zcwf_col_fld'><input type='text' id='Phone' name='Phone' maxlength='30' required></input><div class='zcwf_col_help'></div></div>
                             </div>
                             <div class='zcwf_row'>
                                 <div class='zcwf_col_lab'></div>
@@ -240,6 +496,60 @@
                             </div>
                         </form>
                     </div>
+                    <script>
+                    function validateForm() {
+                        var form = document.forms['WebToLeads6262983000000593187'];
+                        var fields = ['Company', 'First Name', 'Last Name', 'Email', 'Phone'];
+                        for (var i = 0; i < fields.length; i++) {
+                            var field = form[fields[i]];
+                            if (!field.value || field.value.trim() === '') {
+                                alert('אנא מלא את כל השדות המסומנים ב-*');
+                                field.focus();
+                                return false;
+                            }
+                        }
+                        if (!validateEmail6262983000000593187()) {
+                            return false;
+                        }
+                        document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+                        return true;
+                    }
+                    
+                    function validateEmail6262983000000593187() {
+                        var form = document.forms['WebToLeads6262983000000593187'];
+                        var emailFld = form.querySelectorAll('[ftype=email]');
+                        var i;
+                        for (i = 0; i < emailFld.length; i++) {
+                            var emailVal = emailFld[i].value;
+                            if ((emailVal.replace(/^\s+|\s+$/g, '')).length != 0) {
+                                var atpos = emailVal.indexOf('@');
+                                var dotpos = emailVal.lastIndexOf('.');
+                                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+                                    alert('אנא הזן כתובת דוא״ל חוקית. ');
+                                    emailFld[i].focus();
+                                    return false;
+                                }
+                            }
+                        }
+                        return true;
+                    }
+                    
+                    function tooltipShow6262983000000593187(el) {
+                        var tooltip = el.nextElementSibling;
+                        var tooltipDisplay = tooltip.style.display;
+                        if (tooltipDisplay == 'none') {
+                            var allTooltip = document.getElementsByClassName('zcwf_tooltip_over');
+                            for (i = 0; i < allTooltip.length; i++) {
+                                allTooltip[i].style.display = 'none';
+                            }
+                            tooltip.style.display = 'block';
+                        } else {
+                            tooltip.style.display = 'none';
+                        }
+                    }
+                    </script>
+                    <!-- Do not remove this --- Analytics Tracking code starts --><script id='wf_anal' src='https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=a7696c6f7da7bed324759319d9aa9f3468c0483c103dc27d7eb7193f0dc0597e'></script><!-- Do not remove this --- Analytics Tracking code ends. -->
+                    
                     <!-- סיום הטופס -->
                         </div>
                     </form>
