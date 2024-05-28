@@ -121,7 +121,7 @@ form input, form textarea {
     margin-bottom: 10px;
     border: 1px solid gold; /* גבול זהב */
     border-radius: 5px;
-    background-color: #333; /* צבע רקע אפור */
+    background-color: transparent; /* שינוי צבע הרקע לשקוף */
     color: gold; /* צבע טקסט זהב */
 }
 
