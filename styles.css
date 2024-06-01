@@ -2,7 +2,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     direction: rtl;
     text-align: right;
-    background: url('hero background.png') no-repeat center center fixed;
+    background: url('hero-background.png') no-repeat center center fixed;
     background-size: cover;
     color: #d4af37;
     margin: 0;
@@ -12,12 +12,13 @@ body {
 
 header, nav, main, footer {
     padding: 20px;
-    margin: 10px;
+    margin: 10px auto;
     border-radius: 10px;
+    max-width: 900px;
 }
 
 header {
-    background-color: rgba(30, 30, 30, 0.8); 
+    background-color: rgba(30, 30, 30, 0.8);
     color: #d4af37;
     padding: 20px 0;
     text-align: center;
@@ -80,13 +81,14 @@ h1, h2, h3 {
     background-color: #2c2c2c;
     transition: background-color 0.3s, box-shadow 0.3s;
     color: #d4af37;
+    display: flex;
+    align-items: center;
 }
 
 .service img, .card img {
-    max-width: 100px; /* מקטין את התמונות */
+    max-width: 150px;
     height: auto;
-    display: block;
-    margin: 0 auto 10px;
+    margin-right: 20px;
 }
 
 .service:hover, .card:hover {

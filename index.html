@@ -1,32 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketing Magic</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("mousemove", function(e) {
+            for (let i = 0; i < 5; i++) {
+                let sparkle = document.createElement("div");
+                sparkle.className = "sparkle";
+                sparkle.style.left = `${e.pageX + Math.random() * 20 - 10}px`;
+                sparkle.style.top = `${e.pageY + Math.random() * 20 - 10}px`;
+                sparkle.style.setProperty("--i", i);
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="index.html">דף הבית</a></li>
-                <li><a href="about.html">אודות</a></li>
-                <li><a href="services.html">שירותים</a></li>
-                <li><a href="contact.html">צור קשר</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <img src="logo.png" alt="Marketing Magic Logo" class="logo">
+            <h1>Marketing Magic</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">בית</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="services.html">שירותים</a></li>
+                    <li><a href="contact.html">יצירת קשר</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-        <section class="hero">
-            <h1>ברוכים הבאים ל-Marketing Magic</h1>
-            <p>השירותים המקצועיים ביותר לשיווק דיגיטלי, עיצוב אתרים, ופתרונות CRM מתקדמים.</p>
-            <button onclick="window.location.href='services.html'">למד עוד</button>
-        </section>
+        <div class="container">
+            <h2>ברוכים הבאים ל-Marketing Magic</h2>
+            <p>שלום וברוכים הבאים ל-Marketing Magic, המקום בו השיווק הדיגיטלי הופך לאומנות. אנחנו כאן כדי לעזור לך לצמוח ולהגיע לקהלים חדשים באמצעות פתרונות שיווק מתקדמים.</p>
+            <p>בין השירותים שאנו מציעים:</p>
+            <ul>
+                <li>שירותי SEO לשיפור הדירוג במנועי חיפוש</li>
+                <li>ניהול קמפיינים ברשתות חברתיות</li>
+                <li>עיצוב אתרים מותאם אישית</li>
+                <li>פתרונות CRM מתקדמים</li>
+            </ul>
+            <p>מחכים לעזור לך להגשים את החלום העסקי שלך!</p>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2024 Marketing Magic. כל הזכויות שמורות.</p>
+        <div class="container">
+            <p>כל הזכויות שמורות © Marketing Magic</p>
+        </div>
     </footer>
 </body>
 </html>
+
