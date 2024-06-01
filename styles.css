@@ -2,12 +2,12 @@ body {
     font-family: 'Open Sans', sans-serif;
     direction: rtl;
     text-align: right;
-    background: url('hero-background.png') no-repeat center center fixed; /* הוספת תמונת רקע */
-    background-size: cover; /* כיסוי מלא של הרקע */
-    color: #d4af37; /* צבע טקסט זהב */
+    background: url('hero-background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #d4af37;
     margin: 0;
     padding: 0;
-    cursor: url('magic-cursor.png'), auto; /* החלפת סמן העכבר לסמן קסם */
+    cursor: url('magic-cursor.png'), auto;
 }
 
 header, nav, main, footer {
@@ -17,11 +17,11 @@ header, nav, main, footer {
 }
 
 header {
-    background-color: #1e1e1e; /* צבע רקע כהה */
-    color: #d4af37; /* צבע טקסט זהב */
+    background-color: rgba(30, 30, 30, 0.8);
+    color: #d4af37;
     padding: 20px 0;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* הצללה */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
@@ -46,28 +46,63 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #d4af37; /* צבע זהב */
+    color: #d4af37;
     font-weight: bold;
-    transition: color 0.3s, transform 0.3s; /* הוספת אפקט מעבר חלק */
+    transition: color 0.3s, transform 0.3s;
 }
 
 nav ul li a:hover {
-    color: #fff; /* צבע לבן בעת מעבר */
-    transform: scale(1.1); /* שינוי גודל בעת מעבר */
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    color: #d4af37;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background-color: #d4af37;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero button:hover {
+    background-color: #b8962e;
+    transform: scale(1.05);
 }
 
 .container {
     max-width: 900px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #1e1e1e; /* צבע רקע כהה */
+    background-color: rgba(30, 30, 30, 0.8);
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* הצללה */
-    color: #d4af37; /* צבע טקסט זהב */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    color: #d4af37;
 }
 
 h1, h2, h3 {
-    color: #d4af37; /* צבע כותרות זהב */
+    color: #d4af37;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -77,19 +112,27 @@ h1, h2, h3 {
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
-    background-color: #2c2c2c; /* צבע רקע כהה */
+    background-color: rgba(44, 44, 44, 0.8);
     transition: background-color 0.3s, box-shadow 0.3s;
-    color: #d4af37; /* צבע טקסט זהב */
+    color: #d4af37;
+    display: flex;
+    align-items: center;
+}
+
+.service img, .card img {
+    max-width: 150px;
+    margin-right: 20px;
+    border-radius: 10px;
 }
 
 .service:hover, .card:hover {
-    background-color: #3a3a3a; /* צבע רקע כהה יותר בעת מעבר */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* הצללה מוגברת */
+    background-color: #3a3a3a;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 button {
-    background-color: #d4af37; /* צבע כפתור זהב */
-    color: #000; /* צבע טקסט שחור */
+    background-color: #d4af37;
+    color: #000;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -98,8 +141,8 @@ button {
 }
 
 button:hover {
-    background-color: #b8962e; /* צבע כפתור כהה יותר בעת מעבר */
-    transform: scale(1.05); /* שינוי גודל בעת מעבר */
+    background-color: #b8962e;
+    transform: scale(1.05);
 }
 
 form label {
@@ -107,20 +150,19 @@ form label {
     margin-top: 10px;
 }
 
-/* עיצוב שדות טופס */
 form input, form textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
-    border: 1px solid gold; /* גבול זהב */
+    border: 1px solid gold;
     border-radius: 5px;
-    background-color: transparent; /* שינוי צבע הרקע לשקוף */
-    color: gold; /* צבע טקסט זהב */
+    background-color: transparent;
+    color: gold;
 }
 
 form input::placeholder, form textarea::placeholder {
-    color: gold; /* צבע טקסט זהב בתוך השדות */
+    color: gold;
 }
 
 form input[type="checkbox"] {
@@ -143,7 +185,6 @@ form button:hover {
     background-color: #b8962e;
 }
 
-/* הנפשות */
 .card, .service {
     opacity: 0;
     transform: translateY(20px);
@@ -157,7 +198,6 @@ form button:hover {
     }
 }
 
-/* נצנצים לעכבר */
 @keyframes sparkle {
     0% {
         opacity: 0.8;
@@ -184,13 +224,7 @@ form button:hover {
     animation-delay: calc(0.6s * var(--i));
 }
 
-/* קוד עבור סמן העכבר המותאם אישית */
-body {
-    cursor: url('magic-cursor.png'), auto;
-}
-
 body:hover .sparkle {
     animation: sparkle 0.6s linear infinite;
     animation-delay: calc(0.6s * var(--i));
 }
-
