@@ -2,12 +2,18 @@ body {
     font-family: 'Open Sans', sans-serif;
     direction: rtl;
     text-align: right;
-    background: url('hero%20background.png') no-repeat center center fixed;
+    background: url('hero background.png') no-repeat center center fixed;
     background-size: cover;
     color: #d4af37;
     margin: 0;
     padding: 0;
     cursor: url('magic-cursor.png'), auto;
+}
+
+.service img, .card img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 20px;
 }
 
 header, nav, main, footer {
@@ -26,18 +32,12 @@ header {
 }
 
 .logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid #d4af37;
+    width: 150px;
+    height: auto;
     display: block;
-    margin: 0 auto 20px auto;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
-}
-
-.logo:hover {
-    transform: scale(1.1);
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border-radius: 50%;
 }
 
 nav ul {
@@ -72,12 +72,6 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     color: #d4af37;
-}
-
-.about-image {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 20px;
 }
 
 h1, h2, h3 {
@@ -214,4 +208,19 @@ body:hover .sparkle {
     height: 100px;
     object-fit: cover;
     margin-right: 20px;
+}
+
+.testimonial {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.testimonial p {
+    flex: 1;
+    margin: 0;
 }
