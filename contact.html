@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>יצירת קשר - Marketing Magic</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="Marketing Magic Logo" class="logo">
+            <h1>Marketing Magic</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">בית</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="services.html">שירותים</a></li>
+                    <li><a href="contact.html">יצירת קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2>יצירת קשר</h2>
+            <form action="https://formspree.io/f/mleqkaqr" method="POST">
+                <label for="name">שם מלא:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">אימייל:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">הודעה:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <label>
+                    <input type="checkbox" id="subscribe" name="subscribe" required>
+                    אני מאשר/ת דיוור
+                </label>
+                
+                <button type="submit">שלח</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>כל הזכויות שמורות © Marketing Magic</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("mousemove", function(e) {
+            for (let i = 0; i < 5; i++) {
+                let sparkle = document.createElement("div");
+                sparkle.className = "sparkle";
+                sparkle.style.left = `${e.pageX + Math.random() * 20 - 10}px`;
+                sparkle.style.top = `${e.pageY + Math.random() * 20 - 10}px`;
+                sparkle.style.setProperty("--i", i);
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        });
+    </script>
+</body>
+</html>

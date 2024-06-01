@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אודות - Marketing Magic</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="Marketing Magic Logo" class="logo">
+            <h1>Marketing Magic</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">בית</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="services.html">שירותים</a></li>
+                    <li><a href="contact.html">יצירת קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2>אודות</h2>
+            <img src="office-image.jpg" alt="משרד Marketing Magic" class="about-image">
+            <p>ברוכים הבאים ל-Marketing Magic, חברת שיווק דיגיטלי המובילה במתן פתרונות מתקדמים לעסקים קטנים ובינוניים.</p>
+            <p>Marketing Magic הוקמה מתוך רצון עז לעזור לעסקים לגדול ולנהל את עצמם בצורה מיטבית. אנו מבינים את התסכול שבהשקעת כספים רבים בלימודים ושירותים ללא תוצאות מספקות. הייחודיות שלנו טמונה בידע המעמיק בשיווק דיגיטלי, פרסום ממומן בכל הפלטפורמות, יישום מערכות CRM, ותכנות בשפות Java ו-Python. אנו כאן כדי לספק לכם את הכלים והפתרונות שיביאו את העסק שלכם להצלחה. המטרה שלנו היא לעזור לעסקים לצמוח ולהגיע ללקוחות חדשים באמצעות כלים שיווקיים חדשניים ומתקדמים.</p>
+
+            <h3>השירותים שלנו</h3>
+            <p>אנו מציעים מגוון רחב של שירותים כולל שיווק דיגיטלי, פרסום ממומן, עיצוב אתרים מותאם אישית, ויישום מערכות CRM מתקדמות. כל השירותים מתבצעים במקצועיות ובתשומת לב לפרטים, במטרה להביא לתוצאות מיטביות עבור הלקוחות שלנו.</p>
+
+            <h3>המלצות לקוחות</h3>
+            <div class="testimonial">
+                <img src="client1.png" alt="Client 1" class="testimonial-img">
+                <p>"Marketing Magic עזרו לנו להגדיל את החשיפה והמבקרים באתר שלנו. השירות מקצועי וממוקד, זמינות ויחס מתחשב ומבין." - אריאל</p>
+            </div>
+            <div class="testimonial">
+                <img src="client2.png" alt="Client 2" class="testimonial-img">
+                <p>"השירותים של Marketing Magic שיפרו את הנראות המקוונת שלנו בצורה משמעותית. אנו מאוד מרוצים!" - יעל</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>כל הזכויות שמורות © Marketing Magic</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=100086617368871" target="_blank">
+                    <img src="facebook.png" alt="Facebook" style="width: 30px; height: 30px;">
+                </a>
+                <!-- אפשר להוסיף כאן קישורים לרשתות חברתיות נוספות אם יש לך -->
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("mousemove", function(e) {
+            for (let i = 0; i < 5; i++) {
+                let sparkle = document.createElement("div");
+                sparkle.className = "sparkle";
+                sparkle.style.left = `${e.pageX + Math.random() * 20 - 10}px`;
+                sparkle.style.top = `${e.pageY + Math.random() * 20 - 10}px`;
+                sparkle.style.setProperty("--i", i);
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Magic</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("mousemove", function(e) {
+            for (let i = 0; i < 5; i++) {
+                let sparkle = document.createElement("div");
+                sparkle.className = "sparkle";
+                sparkle.style.left = `${e.pageX + Math.random() * 20 - 10}px`;
+                sparkle.style.top = `${e.pageY + Math.random() * 20 - 10}px`;
+                sparkle.style.setProperty("--i", i);
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="Marketing Magic Logo" class="logo">
+            <h1>Marketing Magic</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">בית</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="services.html">שירותים</a></li>
+                    <li><a href="contact.html">יצירת קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2>ברוכים הבאים ל-Marketing Magic</h2>
+            <p>שלום וברוכים הבאים ל-Marketing Magic, המקום בו השיווק הדיגיטלי הופך לאומנות. אנחנו כאן כדי לעזור לך לצמוח ולהגיע לקהלים חדשים באמצעות פתרונות שיווק מתקדמים.</p>
+            <p>בין השירותים שאנו מציעים:</p>
+            <ul>
+                <li>שירותי SEO לשיפור הדירוג במנועי חיפוש</li>
+                <li>ניהול קמפיינים ברשתות חברתיות</li>
+                <li>עיצוב אתרים מותאם אישית</li>
+                <li>פתרונות CRM מתקדמים</li>
+            </ul>
+            <p>נשמח לעזור לך להשיג את המטרות העסקיות שלך ולהצליח בשיווק הדיגיטלי!</p>
+            <button onclick="window.location.href='services.html'">למידע נוסף</button>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>כל הזכויות שמורות © Marketing Magic</p>
+        </div>
+    </footer>
+</body>
+</html>
+
