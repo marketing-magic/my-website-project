@@ -1,146 +1,32 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketing Magic</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-        function toggleForm(formId) {
-            var form = document.getElementById(formId);
-            form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
-        }
-
-        function validateForm() {
-            var form = document.forms['WebToLeads6262983000000593187'];
-            var fields = ['Company', 'First_Name', 'Last_Name', 'Email', 'Phone'];
-            for (var i = 0; i < fields.length; i++) {
-                var field = form[fields[i]];
-                if (!field.value || field.value.trim() === '') {
-                    alert('אנא מלא את כל השדות המסומנים ב-*');
-                    field.focus();
-                    return false;
-                }
-            }
-            if (!validateEmail6262983000000593187()) {
-                return false;
-            }
-            document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
-            return true;
-        }
-
-        function validateEmail6262983000000593187() {
-            var form = document.forms['WebToLeads6262983000000593187'];
-            var emailFld = form.querySelectorAll('[type=email]');
-            for (var i = 0; i < emailFld.length; i++) {
-                var emailVal = emailFld[i].value;
-                if ((emailVal.replace(/^\s+|\s+$/g, '')).length != 0) {
-                    var atpos = emailVal.indexOf('@');
-                    var dotpos = emailVal.lastIndexOf('.');
-                    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
-                        alert('אנא הזן כתובת דוא״ל חוקית.');
-                        emailFld[i].focus();
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-    </script>
 </head>
 <body>
     <header>
-        <div class="container">
-            <img src="logo.png" alt="Marketing Magic Logo" class="logo">
-            <h1>Marketing Magic</h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">בית</a></li>
-                    <li><a href="about.html">אודות</a></li>
-                    <li><a href="services.html">שירותים</a></li>
-                    <li><a href="contact.html">יצירת קשר</a></li>
-                </ul>
-            </nav>
-        </div>
+        <img src="logo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">דף הבית</a></li>
+                <li><a href="about.html">אודות</a></li>
+                <li><a href="services.html">שירותים</a></li>
+                <li><a href="contact.html">צור קשר</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <div class="container">
-            <h2>ברוכים הבאים ל-Marketing Magic</h2>
-            <p>שלום וברוכים הבאים ל-Marketing Magic, המקום בו השיווק הדיגיטלי הופך לאומנות. אנחנו כאן כדי לעזור לך לצמוח ולהגיע לקהלים חדשים באמצעות פתרונות שיווק מתקדמים.</p>
-            <p>בין השירותים שאנו מציעים:</p>
-            <ul>
-                <li>שירותי SEO לשיפור הדירוג במנועי חיפוש</li>
-                <li>ניהול קמפיינים ברשתות חברתיות</li>
-                <li>עיצוב אתרים מותאם אישית</li>
-                <li>פתרונות CRM מתקדמים</li>
-            </ul>
-            <p>מחכים לעזור לך להגשים את החלום העסקי שלך!</p>
-
-            <div class="card">
-                <h3>שירותי SEO</h3>
-                <p>שירותי SEO (אופטימיזציה למנועי חיפוש) מתמקדים בשיפור הנראות של האתר שלך במנועי החיפוש כמו גוגל. אנחנו מנתחים את מילות המפתח הרלוונטיות, משפרים את התוכן באתר, ומוודאים שהאתר שלך עומד בדרישות הטכניות של מנועי החיפוש. SEO חשוב כי הוא מביא תנועה אורגנית איכותית לאתר שלך, מגביר את האמינות ומוביל להגדלת המכירות.</p>
-            </div>
-
-            <div class="card">
-                <h3>ניהול קמפיינים ברשתות חברתיות</h3>
-                <p>ניהול קמפיינים ברשתות חברתיות כולל יצירת תוכן, ניתוח ביצועים, ואופטימיזציה של הקמפיינים כדי להגיע לקהל היעד שלך בצורה האפקטיבית ביותר. אנחנו עוזרים לך למנף את הכוח של רשתות חברתיות כמו פייסבוק, אינסטגרם, ולינקדאין כדי לבנות נוכחות מקוונת חזקה.</p>
-            </div>
-
-            <div class="card">
-                <h3>עיצוב אתרים מותאם אישית</h3>
-                <p>עיצוב אתרים מותאם אישית כולל תכנון ועיצוב אתר בהתאם לצרכים של העסק שלך. אנחנו יוצרים אתרים מודרניים, נגישים וידידותיים למשתמש, שיתאימו לכל המכשירים (רספונסיביים). העיצוב הייחודי משפר את חווית המשתמש ומגביר את האמינות של העסק.</p>
-            </div>
-
-            <div class="card">
-                <h3>פתרונות CRM מתקדמים</h3>
-                <p>פתרונות CRM (ניהול קשרי לקוחות) מתקדמים מאפשרים לך לנהל ולשפר את התקשורת עם הלקוחות שלך. אנחנו מספקים כלים לארגון מידע על לקוחות, מעקב אחרי תהליכי מכירה, ושיפור השירות והחוויות של הלקוחות.</p>
-            </div>
-            <button onclick="toggleForm('crmWebToEntityForm')">למידע נוסף</button>
-            <div id="crmWebToEntityForm" class="zcwf_lblLeft zcwf_rtl crmWebToEntityForm" style="background-color: rgba(0,0,0,0); color: white; max-width: 600px; display: none;">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <form id="webform6262983000000593187" action="https://crm.zoho.com/crm/WebToLeadForm" name="WebToLeads6262983000000593187" method="POST" onSubmit="return validateForm()" accept-charset="UTF-8">
-                    <input type="text" style="display:none;" name="xnQsjsdp" value="3690cfa9dc2561c512d05a97662499b060d2f4250f8ae4c85706e200c9ad786d">
-                    <input type="hidden" name="zc_gad" id="zc_gad" value="">
-                    <input type="text" style="display:none;" name="xmIwtLD" value="db7bbd0874bc374c51f52d22829a032445cad8a86f15593e27fc6de53d8941bed40511c7e80d7562f445665017e499ab">
-                    <input type="text" style="display:none;" name="actionType" value="TGVhZHM=">
-                    <input type="text" style="display:none;" name="returnURL" value="https://noyshoshan.i.ng/thankyou.html">
-                    <div class="zcwf_title" style="max-width: 600px; color: white; font-family: Arial;">למידע נוסף ושיחת ייעוץ חינם</div>
-                    <div class="zcwf_row">
-                        <div class="zcwf_col_lab" style="font-size:12px; font-family: Arial; color: white;"><label for="Company">חברה<span style="color:red;">*</span></label></div>
-                        <div class="zcwf_col_fld"><input type="text" id="Company" name="Company" maxlength="200" required style="background-color: transparent; color: white;"><div class="zcwf_col_help"></div></div>
-                    </div>
-                    <div class="zcwf_row">
-                        <div class="zcwf_col_lab" style="font-size:12px; font-family: Arial; color: white;"><label for="First_Name">שם פרטי<span style="color:red;">*</span></label></div>
-                        <div class="zcwf_col_fld"><input type="text" id="First_Name" name="First_Name" maxlength="40" required style="background-color: transparent; color: white;"><div class="zcwf_col_help"></div></div>
-                    </div>
-                    <div class="zcwf_row">
-                        <div class="zcwf_col_lab" style="font-size:12px; font-family: Arial; color: white;"><label for="Last_Name">שם משפחה<span style="color:red;">*</span></label></div>
-                        <div class="zcwf_col_fld"><input type="text" id="Last_Name" name="Last_Name" maxlength="80" required style="background-color: transparent; color: white;"><div class="zcwf_col_help"></div></div>
-                    </div>
-                    <div class="zcwf_row">
-                        <div class="zcwf_col_lab" style="font-size:12px; font-family: Arial; color: white;"><label for="Email">דוא״ל<span style="color:red;">*</span></label></div>
-                        <div class="zcwf_col_fld"><input type="email" id="Email" name="Email" crmlabel="" maxlength="100" required style="background-color: transparent; color: white;"><div class="zcwf_col_help"></div></div>
-                    </div>
-                    <div class="zcwf_row">
-                        <div class="zcwf_col_lab" style="font-size:12px; font-family: Arial; color: white;"><label for="Phone">טלפון<span style="color:red;">*</span></label></div>
-                        <div class="zcwf_col_fld"><input type="text" id="Phone" name="Phone" maxlength="30" required style="background-color: transparent; color: white;"><div class="zcwf_col_help"></div></div>
-                    </div>
-                    <div class="zcwf_row">
-                        <div class="zcwf_col_lab"></div>
-                        <div class="zcwf_col_fld">
-                            <input type="submit" id="formsubmit" class="formsubmit zcwf_button" value="שליחה לייעוץ חינם!" title="שליחה לייעוץ חינם!">
-                            <input type="reset" class="zcwf_button" name="reset" value="מילוי מחדש" title="מילוי מחדש">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+        <section class="hero">
+            <h1>ברוכים הבאים ל-Marketing Magic</h1>
+            <p>השירותים המקצועיים ביותר לשיווק דיגיטלי, עיצוב אתרים, ופתרונות CRM מתקדמים.</p>
+            <button onclick="window.location.href='services.html'">למד עוד</button>
+        </section>
     </main>
     <footer>
-        <div class="container">
-            <p>כל הזכויות שמורות © Marketing Magic</p>
-        </div>
+        <p>&copy; 2024 Marketing Magic. כל הזכויות שמורות.</p>
     </footer>
 </body>
 </html>
