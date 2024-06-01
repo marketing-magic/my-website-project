@@ -2,7 +2,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     direction: rtl;
     text-align: right;
-    background: url('hero-background.png') no-repeat center center fixed;
+    background: url('hero background.png') no-repeat center center fixed;
     background-size: cover;
     color: #d4af37;
     margin: 0;
@@ -17,7 +17,7 @@ header, nav, main, footer {
 }
 
 header {
-    background-color: rgba(30, 30, 30, 0.8);
+    background-color: rgba(30, 30, 30, 0.8); /* צבע רקע כהה שקוף */
     color: #d4af37;
     padding: 20px 0;
     text-align: center;
@@ -56,46 +56,11 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    color: #d4af37;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.hero button {
-    background-color: #d4af37;
-    color: #000;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.hero button:hover {
-    background-color: #b8962e;
-    transform: scale(1.05);
-}
-
 .container {
     max-width: 900px;
     margin: 20px auto;
     padding: 20px;
-    background-color: rgba(30, 30, 30, 0.8);
+    background-color: rgba(30, 30, 30, 0.8); /* צבע רקע כהה שקוף */
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     color: #d4af37;
@@ -112,17 +77,9 @@ h1, h2, h3 {
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
-    background-color: rgba(44, 44, 44, 0.8);
+    background-color: #2c2c2c;
     transition: background-color 0.3s, box-shadow 0.3s;
     color: #d4af37;
-    display: flex;
-    align-items: center;
-}
-
-.service img, .card img {
-    max-width: 150px;
-    margin-right: 20px;
-    border-radius: 10px;
 }
 
 .service:hover, .card:hover {
@@ -222,6 +179,10 @@ form button:hover {
     opacity: 0;
     animation: sparkle 0.6s linear infinite;
     animation-delay: calc(0.6s * var(--i));
+}
+
+body {
+    cursor: url('magic-cursor.png'), auto;
 }
 
 body:hover .sparkle {
