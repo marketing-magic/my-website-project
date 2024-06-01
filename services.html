@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>שירותים - Marketing Magic</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -24,22 +23,26 @@
     </header>
     <main>
         <div class="container">
-            <h2>שירותים</h2>
-            <div class="card">
+            <h2>השירותים שלנו</h2>
+            <div class="service">
+                <img src="SEO.png" alt="SEO Services">
                 <h3>שירותי SEO</h3>
-                <p>שירותי SEO (אופטימיזציה למנועי חיפוש) מתמקדים בשיפור הנראות של האתר שלך במנועי החיפוש כמו גוגל. אנחנו מנתחים את מילות המפתח הרלוונטיות, משפרים את התוכן באתר, ומוודאים שהאתר שלך עומד בדרישות הטכניות של מנועי החיפוש. SEO חשוב כי הוא מביא תנועה אורגנית איכותית לאתר שלך, מגביר את האמינות ומוביל להגדלת המכירות.</p>
+                <p>אופטימיזציה למנועי חיפוש כדי לשפר את הדירוג של האתר שלך.</p>
             </div>
-            <div class="card">
+            <div class="service">
+                <img src="ניהול קמפיינים.png" alt="Social Media Campaign Management">
                 <h3>ניהול קמפיינים ברשתות חברתיות</h3>
-                <p>ניהול קמפיינים ברשתות חברתיות כולל יצירת תוכן יצירתי ואטרקטיבי, מיקוד לקהל יעד מתאים, ומעקב אחרי הביצועים של הקמפיינים. המטרה היא ליצור מעורבות גבוהה עם הקהל, לבנות קהילה נאמנה, ולהגדיל את החשיפה והמכירות.</p>
+                <p>ניהול קמפיינים בכל הפלטפורמות החברתיות הפופולריות.</p>
             </div>
-            <div class="card">
+            <div class="service">
+                <img src="hero-image.png" alt="Custom Website Design">
                 <h3>עיצוב אתרים מותאם אישית</h3>
-                <p>עיצוב אתרים מותאם אישית כולל תכנון ועיצוב אתר בהתאם לצרכים של העסק שלך. אנחנו יוצרים אתרים מודרניים, נגישים וידידותיים למשתמש, שיתאימו לכל המכשירים (רספונסיביים). העיצוב הייחודי משפר את חווית המשתמש ומגביר את האמינות של העסק.</p>
+                <p>עיצוב אתרים ייחודי ומותאם אישית לצרכים שלך.</p>
             </div>
-            <div class="card">
+            <div class="service">
+                <img src="crm.png" alt="Advanced CRM Solutions">
                 <h3>פתרונות CRM מתקדמים</h3>
-                <p>פתרונות CRM (ניהול קשרי לקוחות) מתקדמים מאפשרים לך לנהל ולשפר את התקשורת עם הלקוחות שלך. אנחנו מספקים כלים לארגון מידע על לקוחות, מעקב אחרי תהליכי מכירה, ושיפור השירות והחוויות של הלקוחות.</p>
+                <p>ניהול קשרי לקוחות מתקדם לשיפור השירות והתקשורת עם הלקוחות שלך.</p>
             </div>
         </div>
     </main>
@@ -48,19 +51,5 @@
             <p>כל הזכויות שמורות © Marketing Magic</p>
         </div>
     </footer>
-    <script>
-        document.addEventListener("mousemove", function(e) {
-            for (let i = 0; i < 5; i++) {
-                let sparkle = document.createElement("div");
-                sparkle.className = "sparkle";
-                sparkle.style.left = `${e.pageX + Math.random() * 20 - 10}px`;
-                sparkle.style.top = `${e.pageY + Math.random() * 20 - 10}px`;
-                sparkle.style.setProperty("--i", i);
-                document.body.appendChild(sparkle);
-                setTimeout(() => sparkle.remove(), 1000);
-            }
-        });
-    </script>
 </body>
 </html>
-
