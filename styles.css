@@ -2,7 +2,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     direction: rtl;
     text-align: right;
-    background-color: #121212; /* צבע רקע אפור כהה */
+    background: url('hero-background.png') no-repeat center center fixed; /* הוספת תמונת רקע */
+    background-size: cover; /* כיסוי מלא של הרקע */
     color: #d4af37; /* צבע טקסט זהב */
     margin: 0;
     padding: 0;
@@ -191,88 +192,5 @@ body {
 body:hover .sparkle {
     animation: sparkle 0.6s linear infinite;
     animation-delay: calc(0.6s * var(--i));
-}
-
-@keyframes sparkle {
-    0% {
-        opacity: 0.8;
-        transform: translateY(0) scale(1);
-    }
-    50% {
-        opacity: 0.5;
-        transform: translateY(-20px) scale(1.5);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-40px) scale(0);
-    }
-}
-
-.sparkle {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: radial-gradient(circle, #d4af37 0%, rgba(255, 255, 255, 0) 70%);
-    pointer-events: none;
-    opacity: 0;
-    animation: sparkle 0.6s linear infinite;
-    animation-delay: calc(0.6s * var(--i));
-}
-/* ... existing CSS rules ... */
-
-/* עיצוב ותמונות לשירותים */
-.service {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.service img {
-    width: 100px; /* Adjust the size as needed */
-    height: auto;
-    margin-right: 20px;
-    transition: transform 0.3s;
-}
-
-.service img:hover {
-    transform: scale(1.1); /* Slightly enlarge the image on hover */
-}
-
-.service h3 {
-    margin: 0;
-    font-size: 1.5em;
-    color: #d4af37; /* Gold color for the headings */
-}
-
-.service p {
-    margin: 5px 0 0;
-    color: white;
-}
-.service {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.service img {
-    width: 100px; /* Adjust the size as needed */
-    height: auto;
-    margin-right: 20px;
-    transition: transform 0.3s;
-}
-
-.service img:hover {
-    transform: scale(1.1); /* Slightly enlarge the image on hover */
-}
-
-.service h3 {
-    margin: 0;
-    font-size: 1.5em;
-    color: #d4af37; /* Gold color for the headings */
-}
-
-.service p {
-    margin: 5px 0 0;
-    color: white;
 }
 
