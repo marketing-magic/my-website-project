@@ -10,6 +10,9 @@ body {
     cursor: url('magic-cursor.png'), auto;
 }
 
+/* שאר קובץ ה-CSS נשאר כמו קודם */
+
+
 header, nav, main, footer {
     padding: 20px;
     margin: 10px auto;
