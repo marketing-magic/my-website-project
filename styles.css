@@ -17,7 +17,7 @@ header, nav, main, footer {
 }
 
 header {
-    background-color: rgba(30, 30, 30, 0.8); /* צבע רקע כהה שקוף */
+    background-color: rgba(30, 30, 30, 0.8); 
     color: #d4af37;
     padding: 20px 0;
     text-align: center;
@@ -60,7 +60,7 @@ nav ul li a:hover {
     max-width: 900px;
     margin: 20px auto;
     padding: 20px;
-    background-color: rgba(30, 30, 30, 0.8); /* צבע רקע כהה שקוף */
+    background-color: rgba(30, 30, 30, 0.8);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     color: #d4af37;
@@ -80,6 +80,13 @@ h1, h2, h3 {
     background-color: #2c2c2c;
     transition: background-color 0.3s, box-shadow 0.3s;
     color: #d4af37;
+}
+
+.service img, .card img {
+    max-width: 100px; /* מקטין את התמונות */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
 }
 
 .service:hover, .card:hover {
