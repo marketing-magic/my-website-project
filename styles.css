@@ -218,4 +218,34 @@ body:hover .sparkle {
     animation: sparkle 0.6s linear infinite;
     animation-delay: calc(0.6s * var(--i));
 }
+/* ... existing CSS rules ... */
+
+/* עיצוב ותמונות לשירותים */
+.service {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.service img {
+    width: 100px; /* Adjust the size as needed */
+    height: auto;
+    margin-right: 20px;
+    transition: transform 0.3s;
+}
+
+.service img:hover {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
+}
+
+.service h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #d4af37; /* Gold color for the headings */
+}
+
+.service p {
+    margin: 5px 0 0;
+    color: white;
+}
 
