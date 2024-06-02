@@ -258,3 +258,77 @@ body:hover .sparkle {
     margin: 0;
     font-style: italic;
 }
+
+/* שיפור התאמה למובייל */
+@media only screen and (max-width: 600px) {
+    .container, header, nav, main, footer {
+        padding: 10px;
+        margin: 5px auto;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .testimonial-block {
+        width: 100%;
+    }
+}
+
+/* אנימציות נוספות */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.service, .card {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* טפסים עם אימות */
+input:invalid, textarea:invalid {
+    border-color: red;
+}
+
+input:valid, textarea:valid {
+    border-color: green;
+}
+
+/* ניווט עם dropdown */
+nav ul li {
+    position: relative;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(30, 30, 30, 0.9);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    margin: 10px 0;
+}
+
+/* נגישות */
+a {
+    outline: none;
+}
+
+a:focus {
+    outline: 2px dashed #d4af37;
+}
