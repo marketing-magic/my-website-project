@@ -159,9 +159,8 @@ form button:hover {
 
 /* הנפשות */
 .card, .service {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
+    opacity: 1; /* שינוי מ-opacity: 0 ל-opacity: 1 */
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 @keyframes fadeInUp {
@@ -276,23 +275,6 @@ body:hover .sparkle {
     }
 }
 
-/* אנימציות נוספות */
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-
-    .service, .card {
-        opacity: 1; /* שינוי מ-opacity: 0 ל-opacity: 1 */
-        transition: background-color 0.3s, box-shadow 0.3s;
-    }
-    
-    
 /* טפסים עם אימות */
 input:invalid, textarea:invalid {
     border-color: red;
