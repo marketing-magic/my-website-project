@@ -25,7 +25,7 @@
     <main>
         <div class="container">
             <h2>יצירת קשר</h2>
-            <form action="https://formspree.io/f/mleqkaqr" method="POST">
+            <form id="contactForm">
                 <label for="name">שם מלא:</label>
                 <input type="text" id="name" name="name" required>
                 
@@ -50,6 +50,27 @@
         </div>
     </footer>
     <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // למנוע שליחת טופס ברירת מחדל
+
+            // שליחת נתוני הטופס ל-Formspree
+            fetch('https://formspree.io/f/mleqkaqr', {
+                method: 'POST',
+                body: new FormData(event.target),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(function(response) {
+                if (response.ok) {
+                    window.location.href = 'https://noyshoshan.i.ng/thankyou.html'; // הפניה לדף תודה לאחר שליחה מוצלחת
+                } else {
+                    alert('הייתה בעיה בשליחת הטופס. נסה שוב מאוחר יותר.');
+                }
+            }).catch(function(error) {
+                alert('הייתה בעיה בשליחת הטופס. נסה שוב מאוחר יותר.');
+            });
+        });
+
         document.addEventListener("mousemove", function(e) {
             for (let i = 0; i < 5; i++) {
                 let sparkle = document.createElement("div");
