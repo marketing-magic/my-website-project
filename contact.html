@@ -52,25 +52,47 @@
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault(); // למנוע שליחת טופס ברירת מחדל
-
-            // שליחת נתוני הטופס ל-Formspree
-            fetch('https://formspree.io/f/mleqkaqr', {
+    
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            var subscribe = document.getElementById('subscribe').checked;
+    
+            var accessToken = '1000.4521D06EF35B7EA2D8256444BDFD09C23.D5CCFB39D63509A7AEAB43027F85F048'; // הכנס כאן את ה-access token שקיבלת
+    
+            var data = {
+                data: [
+                    {
+                        Full_Name: name,
+                        Email: email,
+                        Description: message,
+                        Lead_Source: "Website Contact Form",
+                        Subscribe: subscribe
+                    }
+                ]
+            };
+    
+            fetch('https://www.zohoapis.com/crm/v2/Leads', {
                 method: 'POST',
-                body: new FormData(event.target),
                 headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(function(response) {
-                if (response.ok) {
+                    'Authorization': 'Bearer ' + accessToken,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.data && data.data[0].status == "success") {
                     window.location.href = 'https://noyshoshan.i.ng/thankyou.html'; // הפניה לדף תודה לאחר שליחה מוצלחת
                 } else {
                     alert('הייתה בעיה בשליחת הטופס. נסה שוב מאוחר יותר.');
                 }
-            }).catch(function(error) {
+            })
+            .catch((error) => {
                 alert('הייתה בעיה בשליחת הטופס. נסה שוב מאוחר יותר.');
             });
         });
-
+    
         document.addEventListener("mousemove", function(e) {
             for (let i = 0; i < 5; i++) {
                 let sparkle = document.createElement("div");
@@ -83,5 +105,6 @@
             }
         });
     </script>
+    
 </body>
 </html>
