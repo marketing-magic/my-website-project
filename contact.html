@@ -58,8 +58,6 @@
             var message = document.getElementById('message').value;
             var subscribe = document.getElementById('subscribe').checked;
 
-            var accessToken = '1000.4521D06EF35B7EA2D8256444BDFD09C23.D5CCFB39D63509A7AEAB43027F85F048'; // הכנס כאן את ה-access token שקיבלת
-
             var data = {
                 data: [
                     {
@@ -72,10 +70,9 @@
                 ]
             };
 
-            fetch('https://www.zohoapis.com/crm/v2/Leads', {
+            fetch('http://localhost:3000/proxy', { // שליחה לשרת הפרוקסי
                 method: 'POST',
                 headers: {
-                    'Authorization': 'Bearer ' + accessToken,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
@@ -114,3 +111,5 @@
     </script>
 </body>
 </html>
+
+
