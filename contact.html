@@ -26,14 +26,17 @@
         <div class="container">
             <h2>יצירת קשר</h2>
             <form id="contactForm" autocomplete="on">
-                <label for="name">שם מלא:</label>
-                <input type="text" id="name" name="name" autocomplete="name" required>
+                <label for="firstName">שם פרטי:</label>
+                <input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
+                
+                <label for="lastName">שם משפחה:</label>
+                <input type="text" id="lastName" name="lastName" autocomplete="family-name" required>
                 
                 <label for="email">אימייל:</label>
                 <input type="email" id="email" name="email" autocomplete="email" required>
                 
                 <label for="message">הודעה:</label>
-                <textarea id="message" name="message" rows="4" autocomplete="message" required></textarea>
+                <textarea id="message" name="message" rows="4" autocomplete="off" required></textarea>
                 
                 <label>
                     <input type="checkbox" id="subscribe" name="subscribe" autocomplete="off" required>
@@ -53,7 +56,8 @@
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault(); // למנוע שליחת טופס ברירת מחדל
 
-            var name = document.getElementById('name').value;
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
             var email = document.getElementById('email').value;
             var message = document.getElementById('message').value;
             var subscribe = document.getElementById('subscribe').checked;
@@ -61,7 +65,8 @@
             var data = {
                 data: [
                     {
-                        Full_Name: name,
+                        First_Name: firstName,
+                        Last_Name: lastName,
                         Email: email,
                         Description: message,
                         Lead_Source: "Website Contact Form",
@@ -102,6 +107,3 @@
     </script>
 </body>
 </html>
-
-
-
