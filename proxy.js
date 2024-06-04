@@ -11,6 +11,8 @@ app.use(bodyParser.json());
 
 app.post('/proxy', async (req, res) => {
     try {
+        console.log('Received request:', req.body); // Print the request body
+
         const response = await fetch('https://www.zohoapis.com/crm/v2/Leads', {
             method: 'POST',
             headers: {
@@ -21,8 +23,10 @@ app.post('/proxy', async (req, res) => {
         });
 
         const data = await response.json();
+        console.log('Response from Zoho:', data); // Print the response from Zoho
         res.json(data);
     } catch (error) {
+        console.error('Error:', error.message); // Print the error message
         res.status(500).json({ error: error.message });
     }
 });
