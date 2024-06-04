@@ -6,7 +6,7 @@ import fetch from 'node-fetch';
 const app = express();
 const port = 3000;
 
-app.use(cors()); // Enable CORS
+app.use(cors({ origin: 'https://noyshoshan.i.ng' })); // Enable CORS for your domain
 app.use(bodyParser.json());
 
 app.post('/proxy', async (req, res) => {
