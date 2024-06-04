@@ -25,18 +25,18 @@
     <main>
         <div class="container">
             <h2>יצירת קשר</h2>
-            <form id="contactForm">
+            <form id="contactForm" autocomplete="on">
                 <label for="name">שם מלא:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" autocomplete="name" required>
                 
                 <label for="email">אימייל:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" autocomplete="email" required>
                 
                 <label for="message">הודעה:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                <textarea id="message" name="message" rows="4" autocomplete="message" required></textarea>
                 
                 <label>
-                    <input type="checkbox" id="subscribe" name="subscribe" required>
+                    <input type="checkbox" id="subscribe" name="subscribe" autocomplete="off" required>
                     אני מאשר/ת דיוור
                 </label>
                 
@@ -70,23 +70,14 @@
                 ]
             };
 
-            fetch('http://localhost:3000/proxy', { // שליחה לשרת הפרוקסי
+            fetch('http://localhost:3000/proxy', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
             })
-            .then(response => {
-                return response.json().then(data => {
-                    console.log('Response:', response);
-                    console.log('Data:', data);
-                    if (!response.ok) {
-                        throw new Error(data.message || 'הייתה בעיה בשליחת הטופס.');
-                    }
-                    return data;
-                });
-            })
+            .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
                 window.location.href = 'https://noyshoshan.i.ng/thankyou.html'; // הפניה לדף תודה לאחר שליחה מוצלחת
@@ -111,5 +102,6 @@
     </script>
 </body>
 </html>
+
 
 
