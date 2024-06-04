@@ -25,7 +25,7 @@
     <main>
         <div class="container">
             <h2>יצירת קשר</h2>
-            <form action="https://formspree.io/f/mleqkaqr" method="POST">
+            <form id="contactForm">
                 <label for="name">שם מלא:</label>
                 <input type="text" id="name" name="name" required>
                 
@@ -50,6 +50,53 @@
         </div>
     </footer>
     <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // למנוע שליחת טופס ברירת מחדל
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            var subscribe = document.getElementById('subscribe').checked;
+
+            var data = {
+                data: [
+                    {
+                        Full_Name: name,
+                        Email: email,
+                        Description: message,
+                        Lead_Source: "Website Contact Form",
+                        Subscribe: subscribe
+                    }
+                ]
+            };
+
+            fetch('http://localhost:3000/proxy', { // שליחה לשרת הפרוקסי
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                return response.json().then(data => {
+                    console.log('Response:', response);
+                    console.log('Data:', data);
+                    if (!response.ok) {
+                        throw new Error(data.message || 'הייתה בעיה בשליחת הטופס.');
+                    }
+                    return data;
+                });
+            })
+            .then(data => {
+                console.log('Success:', data);
+                window.location.href = 'https://noyshoshan.i.ng/thankyou.html'; // הפניה לדף תודה לאחר שליחה מוצלחת
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('הייתה בעיה בשליחת הטופס. נסה שוב מאוחר יותר.');
+            });
+        });
+
         document.addEventListener("mousemove", function(e) {
             for (let i = 0; i < 5; i++) {
                 let sparkle = document.createElement("div");
@@ -64,3 +111,5 @@
     </script>
 </body>
 </html>
+
+
