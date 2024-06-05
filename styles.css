@@ -1,3 +1,4 @@
+/* הגדרות כלליות */
 body {
     font-family: 'Open Sans', sans-serif;
     direction: rtl;
@@ -242,4 +243,13 @@ a {
 
 a:focus {
     outline: 2px dashed #d4af37;
+}
+
+/* תמונות המלצות */
+.client-photo {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
 }
