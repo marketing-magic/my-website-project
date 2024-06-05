@@ -1,9 +1,8 @@
-/* הגדרות כלליות */
 body {
     font-family: 'Open Sans', sans-serif;
     direction: rtl;
     text-align: right;
-    background: url('hero background.png') no-repeat center center fixed;
+    background: url('pic.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #d4af37;
     margin: 0;
