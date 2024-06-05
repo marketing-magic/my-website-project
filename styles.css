@@ -1,3 +1,4 @@
+/* הגדרות כלליות */
 body {
     font-family: 'Open Sans', sans-serif;
     direction: rtl;
@@ -10,12 +11,7 @@ body {
     cursor: url('magic-cursor.png'), auto;
 }
 
-.service img, .card img {
-    max-width: 150px;
-    height: auto;
-    margin-right: 20px;
-}
-
+/* לוגו */
 .logo {
     width: 150px;
     height: 150px;
@@ -24,6 +20,7 @@ body {
     padding-bottom: 20px;
 }
 
+/* ראש העמוד וניווט */
 header, nav, main, footer {
     padding: 20px;
     margin: 10px auto;
@@ -63,6 +60,7 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
+/* תוכן והכרטיסים */
 .container {
     max-width: 900px;
     margin: 20px auto;
@@ -102,6 +100,7 @@ h1, h2, h3 {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
+/* כפתורים */
 button {
     background-color: #d4af37;
     color: #000;
@@ -117,6 +116,7 @@ button:hover {
     transform: scale(1.05);
 }
 
+/* טפסים */
 form label {
     display: block;
     margin-top: 10px;
@@ -196,69 +196,7 @@ form button:hover {
     animation-delay: calc(0.6s * var(--i));
 }
 
-body {
-    cursor: url('magic-cursor.png'), auto;
-}
-
-body:hover .sparkle {
-    animation: sparkle 0.6s linear infinite;
-    animation-delay: calc(0.6s * var(--i));
-}
-
-.testimonial-section {
-    background-color: rgba(30, 30, 30, 0.8);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    color: #d4af37;
-    max-width: 900px;
-}
-
-.testimonial-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.testimonial-block {
-    background-color: #2c2c2c;
-    border: 1px solid #333;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    transition: background-color 0.3s, box-shadow 0.3s;
-    width: calc(33% - 40px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.testimonial-block:hover {
-    background-color: #3a3a3a;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
-}
-
-.client-photo {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.client-details {
-    color: #d4af37;
-}
-
-.testimonial-text {
-    margin: 0;
-    font-style: italic;
-}
-
-/* שיפור התאמה למובייל */
+/* התאמה למובייל */
 @media only screen and (max-width: 600px) {
     .container, header, nav, main, footer {
         padding: 10px;
@@ -273,15 +211,6 @@ body:hover .sparkle {
     .testimonial-block {
         width: 100%;
     }
-}
-
-/* טפסים עם אימות */
-input:invalid, textarea:invalid {
-    border-color: red;
-}
-
-input:valid, textarea:valid {
-    border-color: green;
 }
 
 /* ניווט עם dropdown */
