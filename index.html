@@ -4,25 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketing Magic</title>
-    <meta name="description" content="Marketing Magic - פתרונות שיווק דיגיטלי מתקדמים לעסקים קטנים ובינוניים">
-    <meta property="og:title" content="Marketing Magic">
-    <meta property="og:description" content="Marketing Magic - פתרונות שיווק דיגיטלי מתקדמים לעסקים קטנים ובינוניים">
-    <meta property="og:image" content="logo.png">
-    <meta property="og:url" content="https://noyshoshan.i.ng">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        document.addEventListener("mousemove", function(e) {
-            for (let i = 0; i < 5; i++) {
-                let sparkle = document.createElement("div");
-                sparkle.className = "sparkle";
-                sparkle.style.left = `${e.pageX + Math.random() * 20 - 10}px`;
-                sparkle.style.top = `${e.pageY + Math.random() * 20 - 10}px`;
-                sparkle.style.setProperty("--i", i);
-                document.body.appendChild(sparkle);
-                setTimeout(() => sparkle.remove(), 1000);
-            }
-        });
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -57,17 +40,17 @@
             <h2>המלצות לקוחות</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-block">
-                    <img src="client1.jpg" alt="Client 1" class="client-photo">
+                    <img src="ariel pasport.jpg" alt="Ariel Abramson" class="client-photo">
                     <div class="client-details">אריאל אברמסון</div>
                     <p class="testimonial-text">"שירות מעולה ומקצועי!"</p>
                 </div>
                 <div class="testimonial-block">
-                    <img src="client2.jpg" alt="Client 2" class="client-photo">
+                    <img src="david.webp" alt="David Levi" class="client-photo">
                     <div class="client-details">דוד לוי</div>
                     <p class="testimonial-text">"חווית עבודה נהדרת ותוצאות מרשימות!"</p>
                 </div>
                 <div class="testimonial-block">
-                    <img src="client3.jpg" alt="Client 3" class="client-photo">
+                    <img src="ahn.webp" alt="Ahn Kim" class="client-photo">
                     <div class="client-details">אן קים</div>
                     <p class="testimonial-text">"שירות אדיב ומקצועי, בהחלט ממליץ!"</p>
                 </div>
@@ -77,7 +60,26 @@
     <footer>
         <div class="container">
             <p>כל הזכויות שמורות © 2024 Marketing Magic</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=100086617368871" target="_blank">
+                    <img src="facebook.png" alt="Facebook" style="width: 30px; height: 30px;">
+                </a>
+                <!-- אפשר להוסיף כאן קישורים לרשתות חברתיות נוספות אם יש לך -->
+            </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener("mousemove", function(e) {
+            for (let i = 0; i < 5; i++) {
+                let sparkle = document.createElement("div");
+                sparkle.className = "sparkle";
+                sparkle.style.left = `${e.pageX + Math.random() * 20 - 10}px`;
+                sparkle.style.top = `${e.pageY + Math.random() * 20 - 10}px`;
+                sparkle.style.setProperty("--i", i);
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        });
+    </script>
 </body>
 </html>
