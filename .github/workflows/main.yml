@@ -18,12 +18,10 @@ jobs:
 
     - name: Notify via SendGrid
       if: success()
-      env:
-        SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
       run: |
         curl --request POST \
           --url https://api.sendgrid.com/v3/mail/send \
-          --header "Authorization: Bearer $SENDGRID_API_KEY" \
+          --header "Authorization: Bearer U8R1SMDSNBFNKL2C6C9FMVFY" \
           --header "Content-Type: application/json" \
           --data '{
             "personalizations": [{
