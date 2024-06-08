@@ -1,0 +1,26 @@
+name: Schedule Post
+
+on:
+  schedule:
+    - cron: '0 12 * * *' # תזמון לפי CRON, לדוגמה כאן זה יתבצע כל יום ב-12:00 בצהריים
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Publish scheduled posts
+      run: |
+        python scripts/publish_posts.py
+
+    - name: Notify via Slack
+      if: success()
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
