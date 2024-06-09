@@ -24,10 +24,15 @@ def publish_scheduled_posts():
                     file.write(content)
 
                 # העבר את הפוסט לתיקיית הפוסטים המפורסמים
+                if not os.path.exists(published_posts_path):
+                    os.makedirs(published_posts_path)
                 shutil.move(post_path, os.path.join(published_posts_path, filename))
                 print(f'Published post: {filename}')
+            else:
+                print(f'Post {filename} is scheduled for future date: {publish_date_str}')
         except ValueError:
             print(f'Invalid date format in filename: {filename}')
 
 if __name__ == '__main__':
     publish_scheduled_posts()
+
