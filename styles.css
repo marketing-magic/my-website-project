@@ -1,8 +1,9 @@
+/* הגדרות כלליות */
 body {
     font-family: 'Open Sans', sans-serif;
     direction: rtl;
     text-align: right;
-    background: url('hero background.png') no-repeat center center fixed;
+    background: url('https://raw.githubusercontent.com/marketing-magic/marketing-magic/main/nasa-Q1p7bh3SHj8-unsplash.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #d4af37;
     margin: 0;
@@ -10,12 +11,7 @@ body {
     cursor: url('magic-cursor.png'), auto;
 }
 
-.service img, .card img {
-    max-width: 150px;
-    height: auto;
-    margin-right: 20px;
-}
-
+/* לוגו */
 .logo {
     width: 150px;
     height: 150px;
@@ -24,11 +20,13 @@ body {
     padding-bottom: 20px;
 }
 
+/* ראש העמוד וניווט */
 header, nav, main, footer {
     padding: 20px;
     margin: 10px auto;
     border-radius: 10px;
     max-width: 900px;
+    background-color: rgba(30, 30, 30, 0.9); /* הגדלת השקיפות לשיפור הקריאות */
 }
 
 header {
@@ -49,6 +47,7 @@ nav ul {
 
 nav ul li {
     margin-right: 20px;
+    position: relative; /* להוספת dropdown */
 }
 
 nav ul li a {
@@ -63,11 +62,31 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
+/* הוספת dropdown לתפריט */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(30, 30, 30, 0.9);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    margin: 10px 0;
+}
+
+/* תוכן והכרטיסים */
 .container {
     max-width: 900px;
     margin: 20px auto;
-    padding: 20px;
-    background-color: rgba(30, 30, 30, 0.8);
+    padding: 30px; /* הוספת padding */
+    background-color: rgba(30, 30, 30, 0.9);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     color: #d4af37;
@@ -89,6 +108,9 @@ h1, h2, h3 {
     color: #d4af37;
     display: flex;
     align-items: center;
+    transform: translateY(20px); /* הוספת אנימציה */
+    opacity: 0; /* הוספת אנימציה */
+    animation: fadeInUp 0.6s ease forwards; /* הוספת אנימציה */
 }
 
 .service img, .card img {
@@ -102,6 +124,19 @@ h1, h2, h3 {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
+/* אנימציות לכרטיסים */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* כפתורים */
 button {
     background-color: #d4af37;
     color: #000;
@@ -110,6 +145,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    font-size: 1em;
 }
 
 button:hover {
@@ -117,9 +153,21 @@ button:hover {
     transform: scale(1.05);
 }
 
+button:active {
+    background-color: #a67c00;
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: 2px solid #d4af37;
+}
+
+/* טפסים */
 form label {
     display: block;
     margin-top: 10px;
+    font-weight: bold;
+    color: #d4af37;
 }
 
 form input, form textarea {
@@ -127,14 +175,14 @@ form input, form textarea {
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
-    border: 1px solid gold;
+    border: 1px solid #d4af37;
     border-radius: 5px;
     background-color: transparent;
-    color: gold;
+    color: #d4af37;
 }
 
 form input::placeholder, form textarea::placeholder {
-    color: gold;
+    color: #d4af37;
 }
 
 form input[type="checkbox"] {
@@ -151,6 +199,7 @@ form button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-size: 1em;
 }
 
 form button:hover {
@@ -159,15 +208,7 @@ form button:hover {
 
 /* הנפשות */
 .card, .service {
-    opacity: 1; /* שינוי מ-opacity: 0 ל-opacity: 1 */
     transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 @keyframes sparkle {
@@ -196,15 +237,39 @@ form button:hover {
     animation-delay: calc(0.6s * var(--i));
 }
 
-body {
-    cursor: url('magic-cursor.png'), auto;
+/* התאמה למובייל */
+@media only screen and (max-width: 600px) {
+    .container, header, nav, main, footer {
+        padding: 10px;
+        margin: 5px auto;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin-bottom: 10px;
+    }
+    .testimonial-block {
+        width: 100%;
+    }
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        background-color: rgba(30, 30, 30, 0.8);
+        border-radius: 5px;
+    }
 }
 
-body:hover .sparkle {
-    animation: sparkle 0.6s linear infinite;
-    animation-delay: calc(0.6s * var(--i));
+/* נגישות */
+a {
+    outline: none;
 }
 
+a:focus {
+    outline: 2px dashed #d4af37;
+}
+
+/* הגדרות המלצות */
 .testimonial-section {
     background-color: rgba(30, 30, 30, 0.8);
     border-radius: 10px;
@@ -241,6 +306,17 @@ body:hover .sparkle {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
 }
 
+.client-details {
+    color: #d4af37;
+}
+
+.testimonial-text {
+    margin: 0;
+    font-style: italic;
+    font-size: 1.1em;
+    color: #e0c385;
+}
+
 .client-photo {
     border-radius: 50%;
     width: 100px;
@@ -249,69 +325,37 @@ body:hover .sparkle {
     margin-bottom: 10px;
 }
 
-.client-details {
-    color: #d4af37;
+/* תמונות הצוות */
+.team-photo {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
 }
 
-.testimonial-text {
-    margin: 0;
-    font-style: italic;
-}
-
-/* שיפור התאמה למובייל */
-@media only screen and (max-width: 600px) {
-    .container, header, nav, main, footer {
-        padding: 10px;
-        margin: 5px auto;
-    }
-    nav ul {
-        flex-direction: column;
-    }
-    nav ul li {
-        margin: 10px 0;
-    }
-    .testimonial-block {
-        width: 100%;
-    }
-}
-
-/* טפסים עם אימות */
-input:invalid, textarea:invalid {
-    border-color: red;
-}
-
-input:valid, textarea:valid {
-    border-color: green;
-}
-
-/* ניווט עם dropdown */
-nav ul li {
-    position: relative;
-}
-
-nav ul li ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: rgba(30, 30, 30, 0.9);
-    border-radius: 10px;
-    padding: 10px;
-}
-
-nav ul li:hover ul {
+/* סגנון כללי לתמונות הבלוג */
+.blog-image {
     display: block;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    width: 150px; /* התאמה לגודל התמונות */
+    height: 150px;
+    object-fit: cover;
 }
 
-nav ul li ul li {
-    margin: 10px 0;
+/* סגנון כללי לטיפים */
+.tip {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* נגישות */
-a {
-    outline: none;
+.tip h2 {
+    margin-bottom: 20px;
 }
 
-a:focus {
-    outline: 2px dashed #d4af37;
+.tip p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #d4af37;
 }
