@@ -1,8 +1,11 @@
 import os
-import requests
+from ftplib import FTP
 
-# URL הבסיסי של האתר שלך
-BASE_URL = "https://noyshoshan.i.ng"
+# פרטי ה-FTP (שנה לפי הפרטים שקיבלת)
+FTP_HOST = "ftp.example.com"
+FTP_USER = "username"
+FTP_PASS = "password"
+FTP_DIR = "/path/to/upload"
 
 # רשימת הפוסטים לפרסום
 files_to_publish = [
@@ -14,26 +17,17 @@ files_to_publish = [
 ]
 
 def publish_post(file_path):
-    # קריאת תוכן הקובץ
-    with open(file_path, 'r', encoding='utf-8') as file:
-        content = file.read()
+    # חיבור ל-FTP
+    ftp = FTP(FTP_HOST)
+    ftp.login(user=FTP_USER, passwd=FTP_PASS)
+    ftp.cwd(FTP_DIR)
     
-    # יצירת ה-URL של הפוסט
-    post_name = os.path.basename(file_path).replace('.html', '')
-    post_url = f"{BASE_URL}/{post_name}.html"
+    # העלאת הקובץ
+    with open(file_path, 'rb') as file:
+        ftp.storbinary(f'STOR {os.path.basename(file_path)}', file)
     
-    # הכנת הנתונים לשליחה
-    data = {
-        "content": content
-    }
-
-    # שליחת בקשה לשרת
-    response = requests.post(post_url, data=data)
-
-    if response.status_code == 200:
-        print(f"Post {file_path} published successfully at {post_url}")
-    else:
-        print(f"Failed to publish post {file_path}. Status code: {response.status_code}")
+    ftp.quit()
+    print(f"Post {file_path} published successfully.")
 
 # פרסום כל הפוסטים ברשימה
 for file_path in files_to_publish:
