@@ -6,22 +6,18 @@ from datetime import datetime
 scheduled_posts_path = 'scheduled_posts'
 published_posts_path = 'posts'
 
-def publish_all_posts():
-    print("Starting the publishing process...")
-    if not os.path.exists(scheduled_posts_path):
-        print(f"The directory {scheduled_posts_path} does not exist.")
-        return
-    
+def publish_scheduled_posts():
+    now = datetime.now()
+    print(f"Starting the publishing process at {now}")
+
     for filename in os.listdir(scheduled_posts_path):
+        if filename == '.gitkeep':
+            continue  # להתעלם מקובץ .gitkeep
+
         post_path = os.path.join(scheduled_posts_path, filename)
-        print(f"Processing file: {post_path}")
 
-        if not os.path.isfile(post_path):
-            print(f"{post_path} is not a valid file.")
-            continue
-
-        # הוספת תאריך לפרסום בפוסט
         try:
+            # הוספת תאריך לפרסום בפוסט
             with open(post_path, 'r', encoding='utf-8') as file:
                 content = file.read()
             publish_date_str = datetime.now().strftime('%Y-%m-%d')
@@ -34,8 +30,4 @@ def publish_all_posts():
                 os.makedirs(published_posts_path)
             shutil.move(post_path, os.path.join(published_posts_path, filename))
             print(f'Published post: {filename}')
-        except Exception as e:
-            print(f"Error processing file {filename}: {e}")
-
-if __name__ == '__main__':
-    publish_all_posts()
+        ex
