@@ -1,11 +1,10 @@
+import http.client
+import mimetypes
 import os
-from ftplib import FTP
 
-# פרטי ה-FTP (עדכן לפי הפרטים שלך)
-FTP_HOST = "ftp.yourdomain.com"  # כתובת ה-FTP
-FTP_USER = "your_username"       # שם המשתמש
-FTP_PASS = "your_password"       # הסיסמה
-FTP_DIR = "/path/to/upload"      # הנתיב לתיקיית היעד בשרת
+# פרטי השרת והנתיב
+SERVER = "yourdomain.com"
+PATH = "/upload"  # הנתיב בשרת שבו מקבלים את הקבצים
 
 # רשימת הפוסטים לפרסום
 files_to_publish = [
@@ -17,20 +16,31 @@ files_to_publish = [
 ]
 
 def publish_post(file_path):
-    try:
-        # חיבור ל-FTP
-        ftp = FTP(FTP_HOST)
-        ftp.login(user=FTP_USER, passwd=FTP_PASS)
-        ftp.cwd(FTP_DIR)
-        
-        # העלאת הקובץ
-        with open(file_path, 'rb') as file:
-            ftp.storbinary(f'STOR {os.path.basename(file_path)}', file)
-        
-        ftp.quit()
+    boundary = '----WebKitFormBoundary7MA4YWxkTrZu0gW'
+    payload = ''
+    payload += '--' + boundary + '\r\n'
+    payload += 'Content-Disposition: form-data; name="file"; filename="' + os.path.basename(file_path) + '"\r\n'
+    payload += 'Content-Type: ' + mimetypes.guess_type(file_path)[0] + '\r\n\r\n'
+    
+    with open(file_path, 'r', encoding='utf-8') as file:
+        content = file.read()
+    
+    payload += content + '\r\n'
+    payload += '--' + boundary + '--'
+
+    headers = {
+        'Content-type': 'multipart/form-data; boundary=' + boundary
+    }
+    
+    conn = http.client.HTTPSConnection(SERVER)
+    conn.request("POST", PATH, payload, headers)
+    res = conn.getresponse()
+    data = res.read()
+    
+    if res.status == 200:
         print(f"Post {file_path} published successfully.")
-    except Exception as e:
-        print(f"Failed to publish post {file_path}. Error: {e}")
+    else:
+        print(f"Failed to publish post {file_path}. Status code: {res.status}, Response: {data.decode('utf-8')}")
 
 # פרסום כל הפוסטים ברשימה
 for file_path in files_to_publish:
