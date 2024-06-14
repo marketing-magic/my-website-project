@@ -1,33 +1,45 @@
 import os
-import shutil
-from datetime import datetime
+import requests
 
-# נתיב לתיקיית הפוסטים המתוזמנים
-scheduled_posts_path = 'scheduled_posts'
-published_posts_path = 'posts'
+# URL הבסיסי של האתר שלך
+BASE_URL = "https://noyshoshan.i.ng"
 
-def publish_scheduled_posts():
-    now = datetime.now()
-    print(f"Starting the publishing process at {now}")
+# רשימת הפוסטים לפרסום
+files_to_publish = [
+    "posts/2024-06-10_content_creation_strategies.html",
+    "posts/2024-06-11_seo_tips.html",
+    "posts/2024-06-12_social_media_ads.html",
+    "posts/2024-06-13_using_crm.html",
+    "posts/2024-06-14_intro_to_digital_marketing.html",
+]
 
-    for filename in os.listdir(scheduled_posts_path):
-        if filename == '.gitkeep':
-            continue  # להתעלם מקובץ .gitkeep
+def publish_post(file_path):
+    # קריאת תוכן הקובץ
+    try:
+        with open(file_path, 'r') as file:
+            content = file.read()
+    except FileNotFoundError:
+        print(f"File not found: {file_path}")
+        return
+    
+    # יצירת ה-URL של הפוסט
+    post_name = os.path.basename(file_path).replace('.html', '')
+    post_url = f"{BASE_URL}/{post_name}.html"
+    
+    # הכנת הנתונים לשליחה
+    data = {
+        "content": content
+    }
 
-        post_path = os.path.join(scheduled_posts_path, filename)
+    # שליחת בקשה לשרת
+    print(f"Publishing to {post_url}...")
+    response = requests.put(post_url, data=data)
 
-        try:
-            # הוספת תאריך לפרסום בפוסט
-            with open(post_path, 'r', encoding='utf-8') as file:
-                content = file.read()
-            publish_date_str = datetime.now().strftime('%Y-%m-%d')
-            content = f"<p>פורסם בתאריך: {publish_date_str}</p>\n" + content
-            with open(post_path, 'w', encoding='utf-8') as file:
-                file.write(content)
+    if response.status_code == 200:
+        print(f"Post {file_path} published successfully at {post_url}")
+    else:
+        print(f"Failed to publish post {file_path}. Status code: {response.status_code}, Response: {response.text}")
 
-            # העבר את הפוסט לתיקיית הפוסטים המפורסמים
-            if not os.path.exists(published_posts_path):
-                os.makedirs(published_posts_path)
-            shutil.move(post_path, os.path.join(published_posts_path, filename))
-            print(f'Published post: {filename}')
-        ex
+# פרסום כל הפוסטים ברשימה
+for file_path in files_to_publish:
+    publish_post(file_path)
