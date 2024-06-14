@@ -32,6 +32,10 @@ def publish_scheduled_posts():
                 print(f'Post {filename} is scheduled for future date: {publish_date_str}')
         except ValueError:
             print(f'Invalid date format in filename: {filename}')
+        except FileNotFoundError:
+            print(f'File not found: {post_path}')
+        except Exception as e:
+            print(f'Error occurred while processing {filename}: {str(e)}')
 
 if __name__ == '__main__':
     publish_scheduled_posts()
