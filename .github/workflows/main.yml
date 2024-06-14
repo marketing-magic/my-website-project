@@ -12,6 +12,16 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r scripts/requirements.txt
+
     - name: Publish scheduled posts
       run: |
         python scripts/publish_posts.py
@@ -21,7 +31,7 @@ jobs:
       run: |
         curl --request POST \
           --url https://api.sendgrid.com/v3/mail/send \
-          --header "Authorization: Bearer U8R1SMDSNBFNKL2C6C9FMVFY" \
+          --header "Authorization: Bearer YOUR_SENDGRID_API_KEY" \
           --header "Content-Type: application/json" \
           --data '{
             "personalizations": [{
