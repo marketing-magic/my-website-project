@@ -15,12 +15,8 @@ files_to_publish = [
 
 def publish_post(file_path):
     # קריאת תוכן הקובץ
-    try:
-        with open(file_path, 'r') as file:
-            content = file.read()
-    except FileNotFoundError:
-        print(f"File not found: {file_path}")
-        return
+    with open(file_path, 'r', encoding='utf-8') as file:
+        content = file.read()
     
     # יצירת ה-URL של הפוסט
     post_name = os.path.basename(file_path).replace('.html', '')
@@ -32,13 +28,12 @@ def publish_post(file_path):
     }
 
     # שליחת בקשה לשרת
-    print(f"Publishing to {post_url}...")
     response = requests.put(post_url, data=data)
 
     if response.status_code == 200:
         print(f"Post {file_path} published successfully at {post_url}")
     else:
-        print(f"Failed to publish post {file_path}. Status code: {response.status_code}, Response: {response.text}")
+        print(f"Failed to publish post {file_path}. Status code: {response.status_code}")
 
 # פרסום כל הפוסטים ברשימה
 for file_path in files_to_publish:
