@@ -28,7 +28,7 @@ def publish_post(file_path):
     }
 
     # שליחת בקשה לשרת
-    response = requests.put(post_url, data=data)
+    response = requests.post(post_url, data=data)
 
     if response.status_code == 200:
         print(f"Post {file_path} published successfully at {post_url}")
