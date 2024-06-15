@@ -334,6 +334,7 @@ a:focus {
     margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 /* סגנון כללי לתמונות הבלוג */
 .blog-image {
     display: block;
@@ -359,3 +360,13 @@ a:focus {
     line-height: 1.6;
     color: #d4af37;
 }
+=======
+/* תמונות הבלוג */
+.blog-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+>>>>>>> ae7e0aff9a9d92b016d2104b25eff389b9563b3c

@@ -12,7 +12,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-<<<<<<< HEAD
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -23,8 +22,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r scripts/requirements.txt
 
-=======
->>>>>>> ae7e0aff9a9d92b016d2104b25eff389b9563b3c
     - name: Publish scheduled posts
       run: |
         python scripts/publish_posts.py
@@ -34,11 +31,7 @@ jobs:
       run: |
         curl --request POST \
           --url https://api.sendgrid.com/v3/mail/send \
-<<<<<<< HEAD
           --header "Authorization: Bearer YOUR_SENDGRID_API_KEY" \
-=======
-          --header "Authorization: Bearer U8R1SMDSNBFNKL2C6C9FMVFY" \
->>>>>>> ae7e0aff9a9d92b016d2104b25eff389b9563b3c
           --header "Content-Type: application/json" \
           --data '{
             "personalizations": [{
@@ -51,7 +44,3 @@ jobs:
               "value": "A scheduled post has been successfully published."
             }]
           }'
-<<<<<<< HEAD
-=======
-
->>>>>>> ae7e0aff9a9d92b016d2104b25eff389b9563b3c
