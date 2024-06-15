@@ -1,10 +1,11 @@
-import http.client
-import mimetypes
 import os
+import subprocess
 
-# פרטי השרת והנתיב
-SERVER = "yourdomain.com"
-PATH = "/upload"  # הנתיב בשרת שבו מקבלים את הקבצים
+# נתיב לתיקיית הפרויקט
+project_dir = "C:/Users/User/Desktop/MyWebsite"
+
+# נתיב לדף הבלוג שלך
+blog_page = os.path.join(project_dir, "post1.html")
 
 # רשימת הפוסטים לפרסום
 files_to_publish = [
@@ -15,33 +16,47 @@ files_to_publish = [
     "posts/2024-06-14_intro_to_digital_marketing.html",
 ]
 
-def publish_post(file_path):
-    boundary = '----WebKitFormBoundary7MA4YWxkTrZu0gW'
-    payload = ''
-    payload += '--' + boundary + '\r\n'
-    payload += 'Content-Disposition: form-data; name="file"; filename="' + os.path.basename(file_path) + '"\r\n'
-    payload += 'Content-Type: ' + mimetypes.guess_type(file_path)[0] + '\r\n\r\n'
-    
-    with open(file_path, 'r', encoding='utf-8') as file:
-        content = file.read()
-    
-    payload += content + '\r\n'
-    payload += '--' + boundary + '--'
+def publish_post():
+    try:
+        # קריאת התוכן הקיים בדף הבלוג
+        if os.path.exists(blog_page):
+            with open(blog_page, 'r', encoding='utf-8') as blog_file:
+                blog_content = blog_file.read()
+        else:
+            blog_content = "<html><body><h1>Blog Posts</h1>"
 
-    headers = {
-        'Content-type': 'multipart/form-data; boundary=' + boundary
-    }
-    
-    conn = http.client.HTTPSConnection(SERVER)
-    conn.request("POST", PATH, payload, headers)
-    res = conn.getresponse()
-    data = res.read()
-    
-    if res.status == 200:
-        print(f"Post {file_path} published successfully.")
-    else:
-        print(f"Failed to publish post {file_path}. Status code: {res.status}, Response: {data.decode('utf-8')}")
+        # ניווט לתיקיית הפרויקט
+        os.chdir(project_dir)
 
-# פרסום כל הפוסטים ברשימה
-for file_path in files_to_publish:
-    publish_post(file_path)
+        # הוספת התוכן של כל פוסט לדף הבלוג
+        for file_path in files_to_publish:
+            full_path = os.path.join(project_dir, file_path)
+            if os.path.exists(full_path):
+                with open(full_path, 'r', encoding='utf-8') as post_file:
+                    post_content = post_file.read()
+                    blog_content += f"<hr>{post_content}"
+
+        # סגירת תגיות HTML
+        blog_content += "</body></html>"
+
+        # כתיבת התוכן המעודכן חזרה לדף הבלוג
+        with open(blog_page, 'w', encoding='utf-8') as blog_file:
+            blog_file.write(blog_content)
+
+        # הוספת קבצים
+        for file_path in files_to_publish:
+            subprocess.run(["git", "add", file_path])
+        
+        # יצירת קומיט
+        subprocess.run(["git", "commit", "-m", "Publishing new posts"])
+        
+        # דחיפת השינויים ל-GitHub
+        subprocess.run(["git", "push", "origin", "main"])
+        
+        print("Posts published successfully.")
+    except Exception as e:
+        print(f"Failed to publish posts. Error: {e}")
+
+# פרסום הפוסטים
+publish_post()
+
