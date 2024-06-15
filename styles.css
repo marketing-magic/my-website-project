@@ -26,7 +26,7 @@ header, nav, main, footer {
     margin: 10px auto;
     border-radius: 10px;
     max-width: 900px;
-    background-color: rgba(30, 30, 30, 0.9); /* הגדלת השקיפות לשיפור הקריאות */
+    background-color: rgba(30, 30, 30, 0.9); 
 }
 
 header {
@@ -47,7 +47,7 @@ nav ul {
 
 nav ul li {
     margin-right: 20px;
-    position: relative; /* להוספת dropdown */
+    position: relative; 
 }
 
 nav ul li a {
@@ -85,7 +85,7 @@ nav ul li ul li {
 .container {
     max-width: 900px;
     margin: 20px auto;
-    padding: 30px; /* הוספת padding */
+    padding: 30px; 
     background-color: rgba(30, 30, 30, 0.9);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -108,9 +108,9 @@ h1, h2, h3 {
     color: #d4af37;
     display: flex;
     align-items: center;
-    transform: translateY(20px); /* הוספת אנימציה */
-    opacity: 0; /* הוספת אנימציה */
-    animation: fadeInUp 0.6s ease forwards; /* הוספת אנימציה */
+    transform: translateY(20px); 
+    opacity: 0; 
+    animation: fadeInUp 0.6s ease forwards; 
 }
 
 .service img, .card img {
@@ -334,13 +334,12 @@ a:focus {
     margin-bottom: 10px;
 }
 
-<<<<<<< HEAD
 /* סגנון כללי לתמונות הבלוג */
 .blog-image {
     display: block;
     margin: 0 auto 20px;
     border-radius: 50%;
-    width: 150px; /* התאמה לגודל התמונות */
+    width: 150px; 
     height: 150px;
     object-fit: cover;
 }
@@ -360,15 +359,6 @@ a:focus {
     line-height: 1.6;
     color: #d4af37;
 }
-=======
-/* תמונות הבלוג */
-.blog-image {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
 
 /* עיצוב כללי לפוסטים */
 .post {
@@ -383,7 +373,7 @@ a:focus {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     color: #d4af37;
     max-width: 800px;
-    margin: 0 auto 20px; /* מרכז את הפוסטים */
+    margin: 0 auto 20px;
 }
 
 .post h2 {
@@ -403,5 +393,3 @@ a:focus {
     margin-bottom: 20px;
     max-width: 800px;
 }
-
->>>>>>> ae7e0aff9a9d92b016d2104b25eff389b9563b3c
