@@ -369,4 +369,39 @@ a:focus {
     object-fit: cover;
     margin-bottom: 10px;
 }
+
+/* עיצוב כללי לפוסטים */
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #333;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    background-color: rgba(30, 30, 30, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    color: #d4af37;
+    max-width: 800px;
+    margin: 0 auto 20px; /* מרכז את הפוסטים */
+}
+
+.post h2 {
+    margin-bottom: 20px;
+}
+
+.post p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #d4af37;
+}
+
+.post img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
 >>>>>>> ae7e0aff9a9d92b016d2104b25eff389b9563b3c
