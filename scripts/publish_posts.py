@@ -43,12 +43,11 @@ def publish_post():
         with open(blog_page, 'w', encoding='utf-8') as blog_file:
             blog_file.write(blog_content)
 
-        # הוספת קבצים
-        for file_path in files_to_publish:
-            subprocess.run(["git", "add", file_path])
+        # הוספת קבצים ל-git
+        subprocess.run(["git", "add", blog_page])
         
         # יצירת קומיט
-        subprocess.run(["git", "commit", "-m", "Publishing new posts"])
+        subprocess.run(["git", "commit", "-m", "Updating blog with new posts"])
         
         # דחיפת השינויים ל-GitHub
         subprocess.run(["git", "push", "origin", "main"])
@@ -59,4 +58,3 @@ def publish_post():
 
 # פרסום הפוסטים
 publish_post()
-
