@@ -1,41 +1,36 @@
 import os
-import shutil
-from datetime import datetime
+import subprocess
 
-# נתיב לתיקיית הפוסטים המתוזמנים
-scheduled_posts_path = 'scheduled_posts'
-published_posts_path = 'posts'
+# נתיב לתיקיית הפרויקט
+project_dir = "C:/Users/User/Desktop/MyWebsite"
 
-def publish_all_posts():
-    print("Starting the publishing process...")
-    if not os.path.exists(scheduled_posts_path):
-        print(f"The directory {scheduled_posts_path} does not exist.")
-        return
-    
-    for filename in os.listdir(scheduled_posts_path):
-        post_path = os.path.join(scheduled_posts_path, filename)
-        print(f"Processing file: {post_path}")
+# רשימת הפוסטים לפרסום
+files_to_publish = [
+    "posts/2024-06-10_content_creation_strategies.html",
+    "posts/2024-06-11_seo_tips.html",
+    "posts/2024-06-12_social_media_ads.html",
+    "posts/2024-06-13_using_crm.html",
+    "posts/2024-06-14_intro_to_digital_marketing.html",
+]
 
-        if not os.path.isfile(post_path):
-            print(f"{post_path} is not a valid file.")
-            continue
+def publish_post():
+    try:
+        # ניווט לתיקיית הפרויקט
+        os.chdir(project_dir)
+        
+        # הוספת קבצים
+        for file_path in files_to_publish:
+            subprocess.run(["git", "add", file_path])
+        
+        # יצירת קומיט
+        subprocess.run(["git", "commit", "-m", "Publishing new posts"])
+        
+        # דחיפת השינויים ל-GitHub
+        subprocess.run(["git", "push", "origin", "main"])
+        
+        print("Posts published successfully.")
+    except Exception as e:
+        print(f"Failed to publish posts. Error: {e}")
 
-        # הוספת תאריך לפרסום בפוסט
-        try:
-            with open(post_path, 'r', encoding='utf-8') as file:
-                content = file.read()
-            publish_date_str = datetime.now().strftime('%Y-%m-%d')
-            content = f"<p>פורסם בתאריך: {publish_date_str}</p>\n" + content
-            with open(post_path, 'w', encoding='utf-8') as file:
-                file.write(content)
-
-            # העבר את הפוסט לתיקיית הפוסטים המפורסמים
-            if not os.path.exists(published_posts_path):
-                os.makedirs(published_posts_path)
-            shutil.move(post_path, os.path.join(published_posts_path, filename))
-            print(f'Published post: {filename}')
-        except Exception as e:
-            print(f"Error processing file {filename}: {e}")
-
-if __name__ == '__main__':
-    publish_all_posts()
+# פרסום הפוסטים
+publish_post()
