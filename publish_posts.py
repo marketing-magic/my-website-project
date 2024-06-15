@@ -16,43 +16,34 @@ files_to_publish = [
     "posts/2024-06-14_intro_to_digital_marketing.html",
 ]
 
-def read_post_content(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        return file.read()
-
-def update_blog_file(posts_content):
-    with open(blog_page, 'r', encoding='utf-8') as file:
-        blog_content = file.read()
-    
-    # חיפוש נקודת ההוספה בתוך ה-HTML
-    insert_point = blog_content.find("</main>")
-    if insert_point == -1:
-        raise Exception("Couldn't find the insertion point in the blog file.")
-    
-    # הוספת התוכן של הפוסטים לפני סיום התגית </main>
-    updated_content = blog_content[:insert_point] + posts_content + blog_content[insert_point:]
-
-    with open(blog_page, 'w', encoding='utf-8') as file:
-        file.write(updated_content)
-
 def publish_post():
     try:
+        # קריאת התוכן הקיים בדף הבלוג
+        if os.path.exists(blog_page):
+            with open(blog_page, 'r', encoding='utf-8') as blog_file:
+                blog_content = blog_file.read()
+        else:
+            blog_content = "<html><body><h1>Blog Posts</h1>"
+
         # ניווט לתיקיית הפרויקט
         os.chdir(project_dir)
-        
-        # משיכת השינויים מהמאגר
-        subprocess.run(["git", "pull", "origin", "main"])
-        
-        # קריאת התוכן של כל הפוסטים
-        posts_content = ""
-        for file_path in files_to_publish:
-            post_content = read_post_content(os.path.join(project_dir, file_path))
-            posts_content += post_content + "\n\n"
-        
-        # עדכון קובץ הבלוג הראשי
-        update_blog_file(posts_content)
 
-        # הוספת קובץ הבלוג המעודכן
+        # הוספת התוכן של כל פוסט לדף הבלוג
+        for file_path in files_to_publish:
+            full_path = os.path.join(project_dir, file_path)
+            if os.path.exists(full_path):
+                with open(full_path, 'r', encoding='utf-8') as post_file:
+                    post_content = post_file.read()
+                    blog_content += f"<hr>{post_content}"
+
+        # סגירת תגיות HTML
+        blog_content += "</body></html>"
+
+        # כתיבת התוכן המעודכן חזרה לדף הבלוג
+        with open(blog_page, 'w', encoding='utf-8') as blog_file:
+            blog_file.write(blog_content)
+
+        # הוספת קבצים ל-git
         subprocess.run(["git", "add", blog_page])
         
         # יצירת קומיט
@@ -67,4 +58,3 @@ def publish_post():
 
 # פרסום הפוסטים
 publish_post()
-
