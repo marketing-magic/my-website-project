@@ -52,3 +52,9 @@ nav ul li a:hover {
     color: #fff;
     transform: scale(1.1);
 }
+
+/* כללים נוספים כדי להבטיח את גודל האייקון */
+.facebook-icon img {
+    max-width: 24px;
+    max-height: 24px;
+}
