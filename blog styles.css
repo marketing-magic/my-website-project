@@ -8,6 +8,13 @@
     height: auto;
 }
 
+/* הגדרה כללית לתמונות */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 /* אייקון פייסבוק בסרגל הניווט */
 .facebook-icon img {
     width: 24px; /* שינוי הגודל */
