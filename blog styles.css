@@ -10,8 +10,8 @@
 
 /* אייקון פייסבוק בסרגל הניווט */
 .facebook-icon img {
-    width: 24px;
-    height: 24px;
+    width: 24px; /* שינוי הגודל */
+    height: 24px; /* שינוי הגודל */
     border-radius: 50%;
     margin-left: 10px; /* מרווח בין האייקון לקישורים */
 }
