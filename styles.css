@@ -322,4 +322,50 @@ a:focus {
     height: auto;
 }
 
+/* סגנון לסרגל הניווט */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(30, 30, 30, 0.9); /* צבע רקע */
+    border-radius: 10px; /* פינות מעוגלות */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* הצללה */
+}
+
+nav ul li {
+    margin-right: 20px;
+    position: relative; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #d4af37;
+    font-weight: bold;
+    padding: 10px 15px; /* ריווח פנימי */
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* סגנון כללי לתמונות הפוסט */
+.blog-image, .article-image {
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* אייקון פייסבוק בסרגל הניווט */
+.facebook-icon img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-left: 10px; /* מרווח בין האייקון לקישורים */
+}
 
