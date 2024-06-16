@@ -313,3 +313,13 @@ a:focus {
     height: auto;
 }
 
+/* סגנון כללי לתמונות המאמר */
+.article-image {
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+
+
