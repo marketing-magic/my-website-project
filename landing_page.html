@@ -17,6 +17,8 @@
             background: white;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
         }
         h1 {
             text-align: center;
@@ -24,20 +26,61 @@
         }
         p {
             text-align: center;
+            color: #666;
+        }
+        .cta-button {
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+            padding: 15px;
+            text-align: center;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
         }
         iframe {
             display: block;
             margin: auto;
             width: 100%;
             height: 600px;
+            border: none;
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+            color: #333;
+        }
+        .contact-info a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px auto;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <img src="logo.png" alt="Logo" class="logo">
         <h1>קבלו את המדריך לשיווק דיגיטלי בחינם!</h1>
         <p>מלאו את הפרטים בטופס למטה וקבלו את המדריך המלא לשיווק דיגיטלי ישירות לתיבת הדואר האלקטרוני שלכם. המדריך כולל אסטרטגיות SEO, שיווק תוכן ושיווק ברשתות חברתיות.</p>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSehHTCQ_AhX4HQPR8ZxCzRVzG8jZC3GjwE9Bwn0kRj3VvLtxg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <a href="#form" class="cta-button">קבלו את המדריך עכשיו</a>
+        <iframe id="form" src="https://forms.gle/tvXnLRCaLA6icEDi8">Loading…</iframe>
+        <div class="contact-info">
+            <p>ליצירת קשר:</p>
+            <p>דוא"ל: <a href="mailto:NOYSHOSHANSOLOMON@GMAIL.COM">NOYSHOSHANSOLOMON@GMAIL.COM</a></p>
+            <p>וואטסאפ: <a href="https://wa.me/972545380591">+972 54-538-0591</a></p>
+        </div>
     </div>
 </body>
 </html>
+
